@@ -1,7 +1,8 @@
 #ifndef _MEMORY_H
 #define _MEMORY_H
 
-#include <atltypes.h>
+#include <stdint.h>
+#include <stddef.h>
 
 #include "mem_if.h"
 
@@ -10,13 +11,13 @@
 class memory : public mem_if
 {
 public:
-	void write32(UINT32 addr, INT32 data);
-	void write16(UINT32 addr, INT16 data);
-	void write8(UINT32 addr, INT8 data);
+	void write32(uint32_t addr, int32_t data);
+	void write16(uint32_t addr, int16_t data);
+	void write8(uint32_t addr, int8_t data);
 
-	INT8 read8(UINT32 addr);
-	INT16 read16(UINT32 addr);
-	INT32 read32(UINT32 addr);
+	int8_t read8(uint32_t addr);
+	int16_t read16(uint32_t addr);
+	int32_t read32(uint32_t addr);
 
 	memory(size_t size);
 	memory();

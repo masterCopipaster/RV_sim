@@ -13,32 +13,32 @@ memory::memory(size_t _size)
 	size = _size;
 }
 
-INT8 memory::read8(UINT32 addr)
+int8_t memory::read8(uint32_t addr)
 {
-	return *(INT8*)(buf + addr);
+	return *(int8_t*)(buf + addr);
 }
 
-INT16 memory::read16(UINT32 addr)
+int16_t memory::read16(uint32_t addr)
 {
-	return *(INT16*)(buf + addr);
+	return *(int16_t*)(buf + addr);
 }
 
-INT32 memory::read32(UINT32 addr)
+int32_t memory::read32(uint32_t addr)
 {
-	return *(INT32*)(buf + addr);
+	return *(int32_t*)(buf + addr);
 }
 
-void memory::write8(UINT32 addr, INT8 data)
+void memory::write8(uint32_t addr, int8_t data)
 {
-	*(INT8*)(buf + addr) = data;
+	*(int8_t*)(buf + addr) = data;
 }
 
-void memory::write16(UINT32 addr, INT16 data)
+void memory::write16(uint32_t addr, int16_t data)
 {
-	*(INT16*)(buf + addr) = data;
+	*(int16_t*)(buf + addr) = data;
 }
 
-void memory::write32(UINT32 addr, INT32 data)
+void memory::write32(uint32_t addr, int32_t data)
 {
-	*(INT32*)(buf + addr) = data;
+	*(int32_t*)(buf + addr) = data;
 }

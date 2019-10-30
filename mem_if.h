@@ -1,17 +1,19 @@
 #ifndef _MEM_IF_H
 #define _MEM_IF_H
-#include <atltypes.h>
+#include <stdint.h>
 
 class mem_if
 {
 public:
-	void virtual write32(UINT32 addr, INT32 data) = 0;
-	void virtual write16(UINT32 addr, INT16 data) = 0;
-	void virtual write8(UINT32 addr, INT8 data) = 0;
+	void virtual write32(uint32_t addr, int32_t data) = 0;
+	void virtual write16(uint32_t addr, int16_t data) = 0;
+	void virtual write8(uint32_t addr, int8_t data) = 0;
 
-	INT8 virtual read8(UINT32 addr) = 0;
-	INT16 virtual read16(UINT32 addr) = 0;
-	INT32 virtual read32(UINT32 addr) = 0;
+	int8_t virtual read8(uint32_t addr) = 0;
+	int16_t virtual read16(uint32_t addr) = 0;
+	int32_t virtual read32(uint32_t addr) = 0;
+
+	virtual ~mem_if();
 };
 
 #endif

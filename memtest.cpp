@@ -5,7 +5,7 @@
 
 int main()
 {
-	mem_if* mem = new memory(100);
+	mem_if* mem = new memory(10000);
 	mem->write8(0, 0x01);
 	mem->write8(1, 0x02);
 	mem->write8(2, 0x03);

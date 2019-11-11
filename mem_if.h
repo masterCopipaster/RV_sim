@@ -13,7 +13,7 @@ public:
 	int16_t virtual read16(uint32_t addr) = 0;
 	int32_t virtual read32(uint32_t addr) = 0;
 
-	virtual ~mem_if();
+	//virtual ~mem_if();
 };
 
 #endif

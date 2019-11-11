@@ -10,6 +10,8 @@ class instruction
 {
 	public:
 		//uint32_t opcode;
+		//uint32_t fixedmask;
+		//uint32_t fixedvalue;
 		virtual int execute(proc_state& proc) = 0;
 };
 
@@ -55,6 +57,7 @@ public:
 	instruction_B(uint32_t opcode);
 };
 
+instruction* make_instruction(uint32_t opcode);
 
 /*
 class add : public instruction <be_R_type_enc>

@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 {
 	proc_state proc(10000);
 	proc.printout();
-	instruction* inst = new add_instr(0);
+	instruction* inst = make_instruction(51);
 	((add_instr*)inst)->enc.rs1 = 1;
 	((add_instr*)inst)->enc.rs2 = 2;
 	((add_instr*)inst)->enc.rd = 0;

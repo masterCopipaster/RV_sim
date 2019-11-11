@@ -125,6 +125,7 @@ class slli_instr : public instruction_R
 	slli_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'shamt']
 		proc.pc+=4;
 		return 0;
@@ -169,6 +170,7 @@ class srli_instr : public instruction_R
 	srli_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'shamt']
 		proc.pc+=4;
 		return 0;
@@ -180,6 +182,7 @@ class srai_instr : public instruction_R
 	srai_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'shamt']
 		proc.pc+=4;
 		return 0;
@@ -213,8 +216,8 @@ class add_instr : public instruction_R
 	add_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
-	//['rd', 'rs1', 'rs2']
 		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
+	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
 	}
@@ -225,6 +228,7 @@ class sub_instr : public instruction_R
 	sub_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -236,6 +240,7 @@ class sll_instr : public instruction_R
 	sll_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -247,6 +252,7 @@ class slt_instr : public instruction_R
 	slt_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -258,6 +264,7 @@ class sltu_instr : public instruction_R
 	sltu_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -269,6 +276,7 @@ class xor_instr : public instruction_R
 	xor_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -280,6 +288,7 @@ class srl_instr : public instruction_R
 	srl_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -291,6 +300,7 @@ class sra_instr : public instruction_R
 	sra_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -302,6 +312,7 @@ class or_instr : public instruction_R
 	or_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -313,6 +324,7 @@ class and_instr : public instruction_R
 	and_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -335,6 +347,7 @@ class slliw_instr : public instruction_R
 	slliw_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'shamtw']
 		proc.pc+=4;
 		return 0;
@@ -346,6 +359,7 @@ class srliw_instr : public instruction_R
 	srliw_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'shamtw']
 		proc.pc+=4;
 		return 0;
@@ -357,6 +371,7 @@ class sraiw_instr : public instruction_R
 	sraiw_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'shamtw']
 		proc.pc+=4;
 		return 0;
@@ -368,6 +383,7 @@ class addw_instr : public instruction_R
 	addw_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -379,6 +395,7 @@ class subw_instr : public instruction_R
 	subw_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -390,6 +407,7 @@ class sllw_instr : public instruction_R
 	sllw_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -401,6 +419,7 @@ class srlw_instr : public instruction_R
 	srlw_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;
@@ -412,6 +431,7 @@ class sraw_instr : public instruction_R
 	sraw_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
+		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
 	//['rd', 'rs1', 'rs2']
 		proc.pc+=4;
 		return 0;

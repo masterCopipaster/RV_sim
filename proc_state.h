@@ -2,6 +2,7 @@
 #define _PROCSTATE_H
 
 #include "memory.h"
+#include "stdio.h"
 
 class proc_state
 {
@@ -14,7 +15,7 @@ class proc_state
 		proc_state(size_t  memsize);
 	private:
 };
-
+/*
 proc_state::proc_state(size_t  memsize)
 {
 	memif = new memory(memsize);
@@ -26,6 +27,6 @@ void proc_state::printout()
 	int i;
 	for(i = 0; i < 32; i += 2)
 		printf("R%d=%08X\tR%d=%08X\n", i, reg[i], i + 1, reg[i + 1]);
-} 
+} */
 
 #endif //PROCSTATE_H

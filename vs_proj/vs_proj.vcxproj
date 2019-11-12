@@ -18,6 +18,23 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\decoder.cpp" />
+    <ClCompile Include="..\instruction.cpp" />
+    <ClCompile Include="..\memory.cpp" />
+    <ClCompile Include="..\proc_state.cpp" />
+    <ClCompile Include="..\RV_sim.cpp" />
+    <ClCompile Include="..\simulator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\decoder.h" />
+    <ClInclude Include="..\instruction.h" />
+    <ClInclude Include="..\instr_autogen.h" />
+    <ClInclude Include="..\memory.h" />
+    <ClInclude Include="..\mem_if.h" />
+    <ClInclude Include="..\proc_state.h" />
+    <ClInclude Include="..\simulator.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{35911F7B-7CFD-4760-A880-3AFB23F1DC42}</ProjectGuid>
@@ -122,21 +139,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\decoder.c" />
-    <ClCompile Include="..\decode_test.cpp" />
-    <ClCompile Include="..\instruction.cpp" />
-    <ClCompile Include="..\memory.cpp" />
-    <ClCompile Include="..\proc_state.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\decoder.h" />
-    <ClInclude Include="..\instruction.h" />
-    <ClInclude Include="..\instr_autogen.h" />
-    <ClInclude Include="..\memory.h" />
-    <ClInclude Include="..\mem_if.h" />
-    <ClInclude Include="..\proc_state.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

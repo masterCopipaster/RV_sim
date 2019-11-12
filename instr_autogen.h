@@ -95,7 +95,7 @@ class lui_instr : public instruction_U
 	int execute(proc_state& proc)
 	{
 	//['rd', 'imm20']
-	printf("lui r%d %d\n", enc.rd, enc.imm20);
+	//printf("lui r%d %d\n", enc.rd, enc.imm20);
 		_RD = enc.imm20 << 12;
 		proc.pc+=4;
 		return 0;

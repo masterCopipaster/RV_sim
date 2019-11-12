@@ -20,23 +20,24 @@ indent_mode=2
 [project]
 name=geany_proj
 base_path=/home/leha/RV_sim
+description=
+file_patterns=
 
 [long line marker]
 long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=6
-FILE_NAME_0=95;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmemtest.cpp;0;4
-FILE_NAME_1=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmemory.h;0;4
-FILE_NAME_2=458;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmemory.cpp;0;4
-FILE_NAME_3=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmem_if.h;0;4
-FILE_NAME_4=378;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Finstruction.h;0;4
-FILE_NAME_5=351;C;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fdecode_test.cpp;0;4
-FILE_NAME_6=1354;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fdecoder.h;0;4
-FILE_NAME_7=154;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fproc_state.h;0;4
-FILE_NAME_8=625;Python;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Frisc-v_yaml.py;0;4
-FILE_NAME_9=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Finstr_autogen.h;0;4
+current_page=3
+FILE_NAME_0=16;ASM;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Ftest.asm;0;4
+FILE_NAME_1=70;None;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fbasic_loop_test.txt;0;4
+FILE_NAME_2=78;Python;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Freggen.py;0;4
+FILE_NAME_3=0;Python;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fassembler.py;0;4
 
 [VTE]
 last_dir=/home/leha
+
+[build-menu]
+EX_00_LB=_Execute
+EX_00_CM=python3 "%f"
+EX_00_WD=

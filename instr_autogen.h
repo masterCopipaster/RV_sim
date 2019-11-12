@@ -29,6 +29,7 @@ class blt_instr : public instruction_B
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
+		if(proc.reg[enc.rs1] < proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
 		proc.pc+=4;
 		return 0;
 	}
@@ -40,6 +41,7 @@ class bge_instr : public instruction_B
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
+		if(proc.reg[enc.rs1] >= proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
 		proc.pc+=4;
 		return 0;
 	}
@@ -51,6 +53,7 @@ class bltu_instr : public instruction_B
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
+		if((uint32_t)proc.reg[enc.rs1] < (uint32_t)proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
 		proc.pc+=4;
 		return 0;
 	}
@@ -62,6 +65,7 @@ class bgeu_instr : public instruction_B
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
+		if((uint32_t)proc.reg[enc.rs1] >= (uint32_t)proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
 		proc.pc+=4;
 		return 0;
 	}
@@ -113,6 +117,7 @@ class auipc_instr : public instruction_U
 	int execute(proc_state& proc)
 	{
 	//['rd', 'imm20']
+		_RD = proc.pc + (enc.imm20 << 12);
 		proc.pc+=4;
 		return 0;
 	}
@@ -454,6 +459,7 @@ class lb_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
+		_RD = proc.memif->read8(_RS1 + enc.imm12);
 		proc.pc+=4;
 		return 0;
 	}
@@ -465,6 +471,7 @@ class lh_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
+		_RD = proc.memif->read16(_RS1 + enc.imm12);
 		proc.pc+=4;
 		return 0;
 	}
@@ -476,6 +483,7 @@ class lw_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
+		_RD = proc.memif->read32(_RS1 + enc.imm12);
 		proc.pc+=4;
 		return 0;
 	}
@@ -487,6 +495,7 @@ class ld_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
+		_RD = proc.memif->read32(_RS1 + enc.imm12);
 		proc.pc+=4;
 		return 0;
 	}
@@ -498,6 +507,7 @@ class lbu_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
+		_RD = (uint32_t)proc.memif->read8(_RS1 + enc.imm12);
 		proc.pc+=4;
 		return 0;
 	}
@@ -509,6 +519,7 @@ class lhu_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
+		_RD = (uint32_t)proc.memif->read16(_RS1 + enc.imm12);
 		proc.pc+=4;
 		return 0;
 	}
@@ -520,6 +531,7 @@ class lwu_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
+		_RD = (uint32_t)proc.memif->read32(_RS1 + enc.imm12);
 		proc.pc+=4;
 		return 0;
 	}
@@ -531,6 +543,7 @@ class sb_instr : public instruction_S
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'storeimm']
+		proc.memif->write8(_RS1 + S_type_imm_repair(enc), _RS2);
 		proc.pc+=4;
 		return 0;
 	}
@@ -542,6 +555,7 @@ class sh_instr : public instruction_S
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'storeimm']
+		proc.memif->write16(_RS1 + S_type_imm_repair(enc), _RS2);
 		proc.pc+=4;
 		return 0;
 	}
@@ -553,6 +567,7 @@ class sw_instr : public instruction_S
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'storeimm']
+		proc.memif->write32(_RS1 + S_type_imm_repair(enc), _RS2); 
 		proc.pc+=4;
 		return 0;
 	}
@@ -564,6 +579,7 @@ class sd_instr : public instruction_S
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'storeimm']
+		proc.memif->write32(_RS1 + S_type_imm_repair(enc), _RS2);
 		proc.pc+=4;
 		return 0;
 	}

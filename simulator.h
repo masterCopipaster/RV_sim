@@ -4,6 +4,9 @@
 #include "instruction.h"
 #include "proc_state.h"
 
+#define DEBUG
+#define ZERO_R0
+
 class simulator
 {
 public:
@@ -11,6 +14,7 @@ public:
 	int do_step();
 	simulator(size_t memsize); 
 	simulator(){};
+	void load_myhex(FILE* file);
 };
 
 #endif //_SIMULATOR_H

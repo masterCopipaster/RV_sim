@@ -28,3 +28,12 @@ simulator::simulator(size_t memsize)
 {
 	proc = proc_state(memsize);
 }
+
+void simulator::load_myhex(FILE* file)
+{
+	uint32_t addr, opcode;
+	while (fscanf(file, "%X %X\n", &addr, &opcode) == 2)
+	{
+		proc.memif->write32(addr, opcode);
+	}
+}

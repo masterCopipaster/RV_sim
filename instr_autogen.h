@@ -73,7 +73,10 @@ class jalr_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
-		proc.pc+=4;
+		uint32_t buf = proc.pc + 4;
+		proc.pc += (_RS1 + enc.imm12);
+		proc.pc &= ~1;
+		_RD = buf;
 		return 0;
 	}
 };
@@ -84,7 +87,9 @@ class jal_instr : public instruction_J
 	int execute(proc_state& proc)
 	{
 	//['rd', 'jimm20']
-		proc.pc+=4;
+		printf("%08X\n", J_type_imm_repair(enc));
+		_RD = proc.pc + 4;
+		proc.pc += J_type_imm_repair(enc);
 		return 0;
 	}
 };
@@ -119,6 +124,7 @@ class addi_instr : public instruction_I
 	int execute(proc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
+		_RD = _RS1 + enc.imm12;
 		proc.pc+=4;
 		return 0;
 	}

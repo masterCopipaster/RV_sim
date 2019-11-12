@@ -27,13 +27,16 @@ long_line_column=72
 
 [files]
 current_page=6
-FILE_NAME_0=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmemtest.cpp;0;4
+FILE_NAME_0=95;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmemtest.cpp;0;4
 FILE_NAME_1=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmemory.h;0;4
-FILE_NAME_2=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmemory.cpp;0;4
+FILE_NAME_2=458;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmemory.cpp;0;4
 FILE_NAME_3=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fmem_if.h;0;4
-FILE_NAME_4=67;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Finstruction.h;0;4
-FILE_NAME_5=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fdecode_test.c;0;4
-FILE_NAME_6=1015;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fdecoder.h;0;4
+FILE_NAME_4=378;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Finstruction.h;0;4
+FILE_NAME_5=351;C;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fdecode_test.cpp;0;4
+FILE_NAME_6=1354;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fdecoder.h;0;4
+FILE_NAME_7=154;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fproc_state.h;0;4
+FILE_NAME_8=625;Python;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Frisc-v_yaml.py;0;4
+FILE_NAME_9=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Finstr_autogen.h;0;4
 
 [VTE]
 last_dir=/home/leha

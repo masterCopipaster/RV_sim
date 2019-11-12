@@ -13,6 +13,7 @@ class proc_state
 		
 		void printout();
 		proc_state(size_t  memsize);
+		proc_state(){}
 	private:
 };
 /*

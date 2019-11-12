@@ -87,7 +87,7 @@ class jal_instr : public instruction_J
 	int execute(proc_state& proc)
 	{
 	//['rd', 'jimm20']
-		printf("%08X\n", J_type_imm_repair(enc));
+		//printf("%08X\n", J_type_imm_repair(enc));
 		_RD = proc.pc + 4;
 		proc.pc += J_type_imm_repair(enc);
 		return 0;

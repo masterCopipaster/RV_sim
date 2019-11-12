@@ -23,7 +23,8 @@ fields:
     location: {bits: [{msb: 31, lsb: 12, from: 19, to: 0}], mask: 4294963200, debug_hex_mask: fffff000}
   jimm20:
     name: imm
-    location: {bits: [{msb: 31, lsb: 12, from: 20, to: 1}], mask: 4294963200, debug_hex_mask: fffff000}
+    #location: {bits: [{msb: 31, lsb: 12, from: 20, to: 1}], mask: 4294963200, debug_hex_mask: fffff000}
+    location: {bits:  [{msb: 31, lsb: 31, from: 20, to: 20}, {msb: 30, lsb: 21, from: 10, to: 1}, {msb: 19, lsb: 12, from: 19, to: 12}, {msb: 20, lsb: 20, from: 11, to: 11}], mask: 4294963200, debug_hex_mask: fffff000}
   storeimm:
     name: imm
     location: {bits: [{msb: 31, lsb: 25, from: 11, to: 5}, {msb: 11, lsb: 7, from: 4, to: 0}], mask: 4261416832, debug_hex_mask: fe000f80}

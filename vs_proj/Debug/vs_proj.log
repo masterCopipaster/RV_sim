@@ -1,1 +1,5 @@
-﻿  vs_proj.vcxproj -> C:\Users\andro\OneDrive\Documents\RV_sim\vs_proj\Debug\vs_proj.exe
+﻿  RV_sim.cpp
+  instruction.cpp
+  simulator.cpp
+  Создание кода...
+  vs_proj.vcxproj -> C:\Users\andro\OneDrive\Documents\RV_sim\vs_proj\Debug\vs_proj.exe

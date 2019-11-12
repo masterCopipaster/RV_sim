@@ -5,7 +5,7 @@ class beq_instr : public instruction_B
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
-		if(proc.reg[enc.rs1] == proc.reg[enc.rs1]) proc.pc += B_type_imm_repair(enc);
+		if(proc.reg[enc.rs1] == proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
 		else proc.pc+=4;
 		return 0;
 	}
@@ -17,7 +17,7 @@ class bne_instr : public instruction_B
 	int execute(proc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
-		if(proc.reg[enc.rs1] != proc.reg[enc.rs1]) proc.pc += B_type_imm_repair(enc);
+		if(proc.reg[enc.rs1] != proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
 		else proc.pc+=4;
 		return 0;
 	}

@@ -85,4 +85,17 @@ class add : public instruction <be_R_type_enc>
 
 #include "instr_autogen.h"
 
+class ecall_instr : public instruction
+{
+	public:
+	ecall_instr(uint32_t opcode) :instruction() {}
+	int execute(proc_state& proc)
+	{
+		//['rs1', 'rs2', 'storeimm']
+		printf("ecall\n");
+		proc.pc += 4;
+		return 0;
+	}
+};
+
 #endif //INSTRUCTION_H

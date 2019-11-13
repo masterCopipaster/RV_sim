@@ -100,8 +100,9 @@ for line in lines:
         components.remove(components[0])
     if len(components) == 0: continue
     
-    args = " ".join(components[1:]).split(",")
-    args = arg_convert(args, addr)
+    if len(components) > 1:
+        args = " ".join(components[1:]).split(",")
+        args = arg_convert(args, addr)
     
     ok = False
     for instr in instructions:

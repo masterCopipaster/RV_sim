@@ -1,10 +1,17 @@
-addi r2, R0, 10
+addi r2, r0, 10
 
+jal r5, func
 ;loop
 loop:
-	addi 1, 1, 1 	
-	bne 1, 2, loop
+	addi r1, r1, 1 	
+	blt r1, r2, loop
+
+jal r0, end
 	
-addi 3, 0, 20
-sw 3, 1, 4
-lw 4, 3, 4
+func:
+    add r1, r2, r1
+    jalr r0, r5, 0
+    
+end:
+    ecall 
+    

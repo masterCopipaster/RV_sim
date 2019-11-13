@@ -81,6 +81,7 @@ instruction* make_instruction(uint32_t opcode)
 	if ((opcode & 28799) == 4131) return new sh_instr(opcode); //S
 	if ((opcode & 28799) == 8227) return new sw_instr(opcode); //S
 	if ((opcode & 28799) == 12323) return new sd_instr(opcode); //S
+	if ((opcode & 4294967295) == 115) return new ecall_instr(opcode); //ECALL
 	return 0;
 }
 

@@ -11,12 +11,13 @@ import sys
 #f = open('instr_autogen.h', 'w')
 #sys.stdout = f
 
-classgen = 0
-ifgen = True
+classgen = 1
+ifgen = 0
 
 try:
     with open("risc-v.yaml") as file:
-        instructions = yaml.safe_load(file)["instructions"]
+        instructions = yaml.safe_load(file)["instructions"][86]
+        #print(instructions)
         for instr in instructions:
             if classgen:
                 print("class " + instr["mnemonic"] + "_instr : public instruction_" + instr["format"] + "")

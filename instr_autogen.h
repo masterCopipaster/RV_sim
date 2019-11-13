@@ -78,7 +78,7 @@ class jalr_instr : public instruction_I
 	{
 	//['rd', 'rs1', 'imm12']
 		uint32_t buf = proc.pc + 4;
-		proc.pc += (_RS1 + enc.imm12);
+		proc.pc = (_RS1 + enc.imm12);
 		proc.pc &= ~1;
 		_RD = buf;
 		return 0;
@@ -584,3 +584,4 @@ class sd_instr : public instruction_S
 		return 0;
 	}
 };
+

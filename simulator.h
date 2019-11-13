@@ -4,7 +4,7 @@
 #include "instruction.h"
 #include "proc_state.h"
 
-#define DEBUG
+//#define DEBUG
 #define ZERO_R0
 
 class simulator

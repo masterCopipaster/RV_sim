@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 		file = fopen("basic_loop_test.txt", "rb");
 	if(file) sim.load_myhex(file);
 
-	while (!sim.do_step() && getchar() != 'q');
+	while (!sim.do_step());//&& getchar() != 'q');
 		//getchar()
 	sim.proc.printout();
 	return 0;

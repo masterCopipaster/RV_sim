@@ -30,7 +30,7 @@ class blt_instr : public instruction_B
 	{
 	//['rs1', 'rs2', 'bimm']
 		if(proc.reg[enc.rs1] < proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
-		proc.pc+=4;
+		else proc.pc+=4;
 		return 0;
 	}
 };
@@ -42,7 +42,7 @@ class bge_instr : public instruction_B
 	{
 	//['rs1', 'rs2', 'bimm']
 		if(proc.reg[enc.rs1] >= proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
-		proc.pc+=4;
+		else proc.pc+=4;
 		return 0;
 	}
 };
@@ -54,7 +54,7 @@ class bltu_instr : public instruction_B
 	{
 	//['rs1', 'rs2', 'bimm']
 		if((uint32_t)proc.reg[enc.rs1] < (uint32_t)proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
-		proc.pc+=4;
+		else proc.pc+=4;
 		return 0;
 	}
 };
@@ -66,7 +66,7 @@ class bgeu_instr : public instruction_B
 	{
 	//['rs1', 'rs2', 'bimm']
 		if((uint32_t)proc.reg[enc.rs1] >= (uint32_t)proc.reg[enc.rs2]) proc.pc += B_type_imm_repair(enc);
-		proc.pc+=4;
+		else proc.pc+=4;
 		return 0;
 	}
 };

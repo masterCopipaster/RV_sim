@@ -3,11 +3,13 @@
 #include <stdlib.h>
 
 #include "simulator.h"
+#include "vmemory.h"
 
 
 int main(int argc, char** argv)
 {
-	simulator sim(10000);
+	simulator sim;
+	sim.proc.memif = new vmemory();
 
 	FILE* file;
 	if(!(argv[1] && (file = fopen(argv[1], "rb"))))

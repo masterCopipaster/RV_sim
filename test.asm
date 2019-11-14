@@ -1,11 +1,11 @@
-addi r2, r0, 10
-addi r3, r0, 100
-
-jal r5, func
+addi r3, r0, 1000
+lui r1, 1
+lui r4, 1000000
 ;loop
 loop:
-	addi r1, r1, 1 	
-	blt r1, r3, loop
+    add r1, r1, r3
+    sw r1, r1, 0	
+    bltu r1, r4, loop
 
 jal r0, end
 	

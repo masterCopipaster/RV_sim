@@ -65,6 +65,8 @@ def gen_opcode(instr, args):
 
 
 lines = sys.stdin.readlines()
+ep = 0
+print("EP:\t" + format(ep, "08X")) 
 
 for line in lines:
     if len(line.strip()) > 0 and line.strip()[0] == ";":

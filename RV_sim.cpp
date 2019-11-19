@@ -6,7 +6,7 @@
 #include "simulator.h"
 #include "vmemory.h"
 
-
+ 
 int main(int argc, char** argv)
 {
 	simulator sim;
@@ -16,22 +16,28 @@ int main(int argc, char** argv)
 	char* filename = 0;
 	bool wait = 0;
 	bool debug = 0;
-	 
+	bool usestdin = 0;
+	FILE* file;
+
 	for(i = 1; i < argc; i++)
 	{
 		if(!strcmp(argv[i], "-w")) wait = 1;
 		else if(!strcmp(argv[i], "-d")) debug = 1;
+		else if (!strcmp(argv[i], "-stdin")) usestdin = 1;
 		else filename = argv[i];
 	}
-	if (!filename)
+	if (!usestdin)
 	{
-		printf("please specify input filename\n");
-		return 1;
-	}
+		if (!filename)
+		{
+			printf("please specify input filename\n");
+			return 1;
+		}
 
-	printf("loading file %s\n", filename);
-	FILE* file;
-	file = fopen(filename, "rb");
+		printf("loading file %s\n", filename);
+		file = fopen(filename, "rb");
+	}
+	else file = stdin;
 	if(file) sim.load_myhex(file);
 	else
 	{

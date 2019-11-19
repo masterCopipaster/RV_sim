@@ -1,0 +1,8 @@
+﻿  elf_myexe.cpp
+C:\Users\petrenko.a\Documents\RV_sim\elf_myexe\elf_myexe.cpp(5,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\petrenko.a\Documents\RV_sim\elf_myexe\elf_myexe.cpp(112,29): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  elf_myexe.vcxproj -> C:\Users\petrenko.a\Documents\RV_sim\vs_proj\Release\elf_myexe.exe

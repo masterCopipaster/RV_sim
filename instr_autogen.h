@@ -140,7 +140,7 @@ class slli_instr : public instruction_R
 	slli_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
-		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
+		proc.reg[enc.rd] = proc.reg[enc.rs1] << proc.reg[enc.rs2];
 	//['rd', 'rs1', 'shamt']
 		proc.pc+=4;
 		return 0;
@@ -185,7 +185,7 @@ class srli_instr : public instruction_R
 	srli_instr(uint32_t opcode):instruction_R(opcode){}
 	int execute(proc_state& proc)
 	{
-		proc.reg[enc.rd] = proc.reg[enc.rs1] + proc.reg[enc.rs2];
+		proc.reg[enc.rd] = proc.reg[enc.rs1] >> proc.reg[enc.rs2];
 	//['rd', 'rs1', 'shamt']
 		proc.pc+=4;
 		return 0;

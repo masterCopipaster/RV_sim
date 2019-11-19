@@ -1,0 +1,66 @@
+   1              		.file	"test.c"
+   2              		.option nopic
+   3              		.attribute arch, "rv32i2p0"
+   4              		.attribute unaligned_access, 0
+   5              		.attribute stack_align, 16
+   6              		.text
+   7              		.align	2
+   8              		.globl	main
+  10              	main:
+  11 0000 130101FF 		addi	sp,sp,-16
+  12 0004 23261100 		sw	ra,12(sp)
+  13 0008 23248100 		sw	s0,8(sp)
+  14 000c 13040101 		addi	s0,sp,16
+  15 0010 1305F00F 		li	a0,255
+  16 0014 97000000 		call	fib
+  16      E7800000 
+  17 001c 93070500 		mv	a5,a0
+  18 0020 13850700 		mv	a0,a5
+  19 0024 8320C100 		lw	ra,12(sp)
+  20 0028 03248100 		lw	s0,8(sp)
+  21 002c 13010101 		addi	sp,sp,16
+  22 0030 67800000 		jr	ra
+  24              		.align	2
+  25              		.globl	fib
+  27              	fib:
+  28 0034 130101FE 		addi	sp,sp,-32
+  29 0038 232E1100 		sw	ra,28(sp)
+  30 003c 232C8100 		sw	s0,24(sp)
+  31 0040 232A9100 		sw	s1,20(sp)
+  32 0044 13040102 		addi	s0,sp,32
+  33 0048 2326A4FE 		sw	a0,-20(s0)
+  34 004c 0327C4FE 		lw	a4,-20(s0)
+  35 0050 93071000 		li	a5,1
+  36 0054 63DEE702 		ble	a4,a5,.L4
+  37 0058 8327C4FE 		lw	a5,-20(s0)
+  38 005c 9387F7FF 		addi	a5,a5,-1
+  39 0060 13850700 		mv	a0,a5
+  40 0064 97000000 		call	fib
+  40      E7800000 
+  41 006c 93040500 		mv	s1,a0
+  42 0070 8327C4FE 		lw	a5,-20(s0)
+  43 0074 9387E7FF 		addi	a5,a5,-2
+  44 0078 13850700 		mv	a0,a5
+  45 007c 97000000 		call	fib
+  45      E7800000 
+  46 0084 93070500 		mv	a5,a0
+  47 0088 B387F400 		add	a5,s1,a5
+  48 008c 6F008000 		j	.L6
+  49              	.L4:
+  50 0090 93071000 		li	a5,1
+  51              	.L6:
+  52 0094 13850700 		mv	a0,a5
+  53 0098 8320C101 		lw	ra,28(sp)
+  54 009c 03248101 		lw	s0,24(sp)
+  55 00a0 83244101 		lw	s1,20(sp)
+  56 00a4 13010102 		addi	sp,sp,32
+  57 00a8 67800000 		jr	ra
+  59              		.ident	"GCC: (GNU) 9.2.0"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 test.c
+     /tmp/ccETioXS.s:10     .text:0000000000000000 main
+     /tmp/ccETioXS.s:27     .text:0000000000000034 fib
+     /tmp/ccETioXS.s:49     .text:0000000000000090 .L4
+     /tmp/ccETioXS.s:51     .text:0000000000000094 .L6
+
+NO UNDEFINED SYMBOLS

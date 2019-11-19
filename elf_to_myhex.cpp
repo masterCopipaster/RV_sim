@@ -9,6 +9,7 @@
 #include <cassert>
 #include <cstdio>
 #include <cstring>
+#include <byteswap.h>
 
 int main(int argc, char **argv) {
   if (argc != 2) {
@@ -108,6 +109,7 @@ int main(int argc, char **argv) {
     uint32_t addr_aligned = phdr.p_vaddr;//(phdr.p_vaddr & ((phdr.p_align & phdr.p_align == 0) - 1)) + phdr.p_align; 
     for(int wordn = 0; wordn < phdr.p_memsz / 4; wordn++)
     {
+		//printf("%X\t%08X\n", addr_aligned + wordn * 4, __bswap_32 (segment_content[wordn]));
 		printf("%X\t%08X\n", addr_aligned + wordn * 4, segment_content[wordn]);
 	} 
   }

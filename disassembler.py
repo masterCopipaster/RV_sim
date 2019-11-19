@@ -20,6 +20,7 @@ lines = sys.stdin.readlines()
 
 for line in lines:
     components = line.strip().split()
+    if len(components) == 0: continue
     try:
         addr, opcode = int(components[0], 16), int(components[1], 16)
         for instruction in instructions:
@@ -27,7 +28,7 @@ for line in lines:
                 print(format(addr, "X"),  instruction["mnemonic"])
                 break
         else:
-            print("instruction not detected")
+            print(format(addr, "X"),  "instruction not detected")
     except:
         if components[0] == "EP:":
             print(line)

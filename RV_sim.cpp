@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 	sim.proc.memif = new vmemory();
 
 	int i;
-	char* filename;
+	char* filename = 0;
 	bool wait = 0;
 	bool debug = 0;
 	 
@@ -23,7 +23,12 @@ int main(int argc, char** argv)
 		else if(!strcmp(argv[i], "-d")) debug = 1;
 		else filename = argv[i];
 	}
-	
+	if (!filename)
+	{
+		printf("please specify input filename\n");
+		return 1;
+	}
+
 	printf("loading file %s\n", filename);
 	FILE* file;
 	file = fopen(filename, "rb");

@@ -11,6 +11,7 @@ class simulator
 {
 public:
 	proc_state proc;
+	unsigned long step_count = 0;
 	int do_step();
 	simulator(size_t memsize); 
 	simulator(){};

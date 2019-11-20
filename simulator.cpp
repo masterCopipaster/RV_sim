@@ -21,6 +21,7 @@ int simulator::do_step()
 	proc.printout();
 #endif
 	delete inst;
+	step_count++;
 	return 0;
 }
 

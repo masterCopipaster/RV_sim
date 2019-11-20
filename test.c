@@ -1,8 +1,17 @@
 int fib(int);
+int factoreal(int);
+
+//int vals[1000000]; 
 
 int main()
 {
-	return fib(0xff);
+    //for(int i = 0; i < 100000; i++) vals[i] = i;    
+    return factoreal(10);
+}
+
+int factoreal(int i)
+{
+    return i ? factoreal(i - 1) * i : 1;
 }
 
 int fib(int i)
@@ -11,3 +20,4 @@ int fib(int i)
 }
 
 
+void _start(){ main(); }

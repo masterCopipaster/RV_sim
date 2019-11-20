@@ -50,6 +50,7 @@ int main(int argc, char** argv)
 		if(wait) if(getchar() == 'q') return 0;
 		if(debug) sim.proc.printout();
 	}
-	if(debug) sim.proc.printout();
+	printf("TOTAL INSTRUCTIONS: %d\n", sim.step_count);
+	sim.proc.printout();
 	return 0;
 }

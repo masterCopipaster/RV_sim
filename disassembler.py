@@ -60,3 +60,4 @@ for line in lines:
     except:
         if components[0] == "EP:":
             print(line)
+        else: print("че за херня??", line) 

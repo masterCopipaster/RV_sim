@@ -51,7 +51,13 @@ void vmemory::write32(uint32_t addr, int32_t data)
 
 char* vmemory::getpage(uint32_t addr)
 {
-	std::map <uint32_t, char*> ::iterator it = pages.find(PAGENUM(addr));
-	if (it == pages.end()) pages[PAGENUM(addr)] = (char*)malloc(~PAGEMASK + 1);
-	return pages[PAGENUM(addr)];
+	auto it = pages.find(PAGENUM(addr));
+	char* buf;
+	if (it == pages.end())
+	{
+		buf = (char*)malloc(~PAGEMASK + 1);
+		pages[PAGENUM(addr)] = buf;
+	}
+	else buf = it->second;
+	return buf;
 }

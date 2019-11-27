@@ -21,9 +21,10 @@ int main(int argc, char** argv)
 
 	for(i = 1; i < argc; i++)
 	{
-		if(!strcmp(argv[i], "-w")) wait = 1;
-		else if(!strcmp(argv[i], "-d")) debug = 1;
+		if (!strcmp(argv[i], "-w")) wait = 1;
+		else if (!strcmp(argv[i], "-d")) debug = 1;
 		else if (!strcmp(argv[i], "-stdin")) usestdin = 1;
+		else if (!strcmp(argv[i], "-icache")) sim.use_icache = 1;
 		else filename = argv[i];
 	}
 	if (!usestdin)

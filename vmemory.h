@@ -1,7 +1,7 @@
 #ifndef _VMEMORY_H
 #define _VMEMORY_H
 
-#include <map>
+#include <unordered_map>
 #include <stdint.h>
 #include <stddef.h>
 
@@ -27,7 +27,7 @@ public:
 	vmemory() {}
 
 private:
-	std::map <uint32_t, char*> pages;
+	std::unordered_map <uint32_t, char*> pages;
 	char* getpage(uint32_t addr);
 };
 

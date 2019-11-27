@@ -113,57 +113,7 @@ int main(int argc, char **argv) {
 		printf("%X\t%08X\n", addr_aligned + wordn * 4, segment_content[wordn]);
 	} 
   }
-/*
-  size_t dynstr_off = 0;
-  size_t dynsym_off = 0;
-  size_t dynsym_sz = 0;
 
-  for (uint16_t i = 0; i < elf_hdr.e_shnum; i++) {
-    size_t offset = elf_hdr.e_shoff + i * elf_hdr.e_shentsize;
-    Elf32_Shdr shdr;
-    memmove(&shdr, pybytes + offset, sizeof(shdr));
-    switch (shdr.sh_type) {
-      case SHT_SYMTAB:
-      case SHT_STRTAB:
-        // TODO: have to handle multiple string tables better
-        if (!dynstr_off) {
-          printf("found string table at %zd\n", shdr.sh_offset);
-          dynstr_off = shdr.sh_offset;
-        }
-        break;
-      case SHT_DYNSYM:
-        dynsym_off = shdr.sh_offset;
-        dynsym_sz = shdr.sh_size;
-        printf("found dynsym table at %zd, size %zd\n", shdr.sh_offset,
-               shdr.sh_size);
-        break;
-      default:
-        break;
-    }
-  }
-  assert(dynstr_off);
-  assert(dynsym_off);
-  printf("final value for dynstr_off = %zd\n", dynstr_off);
-  printf("final value for dynsym_off = %zd\n", dynsym_off);
-  printf("final value for dynsym_sz = %zd\n", dynsym_sz);
-
-  for (size_t j = 0; j * sizeof(Elf32_Sym) < dynsym_sz; j++) {
-    Elf32_Sym sym;
-    size_t absoffset = dynsym_off + j * sizeof(Elf32_Sym);
-    memmove(&sym, cbytes + absoffset, sizeof(sym));
-    printf("SYMBOL TABLE ENTRY %zd\n", j);
-    printf("st_name = %d", sym.st_name);
-    if (sym.st_name != 0) {
-      printf(" (%s)", cbytes + dynstr_off + sym.st_name);
-    }
-    printf("\n");
-    printf("st_info = %d\n", sym.st_info);
-    printf("st_other = %d\n", sym.st_other);
-    printf("st_shndx = %d\n", sym.st_shndx);
-    printf("st_value = %p\n", (void *)sym.st_value);
-    printf("st_size = %zd\n", sym.st_size);
-    printf("\n");
-  }*/
   printf("\n");
   return 0;
 }

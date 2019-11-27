@@ -3,31 +3,47 @@
 instruction_R::instruction_R(uint32_t opcode)
 {
 	enc = *(be_R_type_enc*)&opcode;
+	rs1 = enc.rs1;
+	rs2 = enc.rs2;
+	rd = enc.rd;
 }
 
 instruction_I::instruction_I(uint32_t opcode)
 {
 	enc = *(be_I_type_enc*)&opcode;
+	rs1 = enc.rs1;
+	rd = enc.rd;
+	imm12 = __IIMM12;
 }
 
 instruction_S::instruction_S(uint32_t opcode)
 {
 	enc = *(be_S_type_enc*)&opcode;
+	rs1 = enc.rs1;
+	rs2 = enc.rs2;
+	imm12 = __SIMM12;
 }
 
 instruction_U::instruction_U(uint32_t opcode)
 {
 	enc = *(be_U_type_enc*)&opcode;
+	rd = enc.rd;
+	imm20 = __UIMM20;
 }
 
 instruction_J::instruction_J(uint32_t opcode)
 {
 	enc = *(be_J_type_enc*)&opcode;
+	rd = enc.rd;
+	imm20 = __JIMM20;
 }
 
 instruction_B::instruction_B(uint32_t opcode)
 {
 	enc = *(be_B_type_enc*)&opcode;
+	rs1 = enc.rs1;
+	rs2 = enc.rs2;
+	imm12 = __BIMM12;
 }
 
 instruction* make_instruction(uint32_t opcode)

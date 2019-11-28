@@ -6,7 +6,7 @@ int factoreal(int);
 int main()
 {
     //for(int i = 0; i < 100000; i++) vals[i] = i;    
-    return fib(21);
+    return fib(30);
 }
 
 int factoreal(int i)

@@ -11,7 +11,7 @@
   12 0004 23261100 		sw	ra,12(sp)
   13 0008 23248100 		sw	s0,8(sp)
   14 000c 13040101 		addi	s0,sp,16
-  15 0010 1305F00F 		li	a0,255
+  15 0010 13055001 		li	a0,21
   16 0014 97000000 		call	fib
   16      E7800000 
   17 001c 93070500 		mv	a5,a0
@@ -20,47 +20,97 @@
   20 0028 03248100 		lw	s0,8(sp)
   21 002c 13010101 		addi	sp,sp,16
   22 0030 67800000 		jr	ra
-  24              		.align	2
-  25              		.globl	fib
-  27              	fib:
-  28 0034 130101FE 		addi	sp,sp,-32
-  29 0038 232E1100 		sw	ra,28(sp)
-  30 003c 232C8100 		sw	s0,24(sp)
-  31 0040 232A9100 		sw	s1,20(sp)
-  32 0044 13040102 		addi	s0,sp,32
-  33 0048 2326A4FE 		sw	a0,-20(s0)
-  34 004c 0327C4FE 		lw	a4,-20(s0)
-  35 0050 93071000 		li	a5,1
-  36 0054 63DEE702 		ble	a4,a5,.L4
-  37 0058 8327C4FE 		lw	a5,-20(s0)
-  38 005c 9387F7FF 		addi	a5,a5,-1
-  39 0060 13850700 		mv	a0,a5
-  40 0064 97000000 		call	fib
-  40      E7800000 
-  41 006c 93040500 		mv	s1,a0
-  42 0070 8327C4FE 		lw	a5,-20(s0)
-  43 0074 9387E7FF 		addi	a5,a5,-2
-  44 0078 13850700 		mv	a0,a5
-  45 007c 97000000 		call	fib
-  45      E7800000 
-  46 0084 93070500 		mv	a5,a0
-  47 0088 B387F400 		add	a5,s1,a5
-  48 008c 6F008000 		j	.L6
-  49              	.L4:
-  50 0090 93071000 		li	a5,1
-  51              	.L6:
-  52 0094 13850700 		mv	a0,a5
-  53 0098 8320C101 		lw	ra,28(sp)
-  54 009c 03248101 		lw	s0,24(sp)
-  55 00a0 83244101 		lw	s1,20(sp)
-  56 00a4 13010102 		addi	sp,sp,32
-  57 00a8 67800000 		jr	ra
-  59              		.ident	"GCC: (GNU) 9.2.0"
+  24              		.globl	__mulsi3
+  25              		.align	2
+  26              		.globl	factoreal
+  28              	factoreal:
+  29 0034 130101FE 		addi	sp,sp,-32
+  30 0038 232E1100 		sw	ra,28(sp)
+  31 003c 232C8100 		sw	s0,24(sp)
+  32 0040 13040102 		addi	s0,sp,32
+  33 0044 2326A4FE 		sw	a0,-20(s0)
+  34 0048 8327C4FE 		lw	a5,-20(s0)
+  35 004c 638A0702 		beq	a5,zero,.L4
+  36 0050 8327C4FE 		lw	a5,-20(s0)
+  37 0054 9387F7FF 		addi	a5,a5,-1
+  38 0058 13850700 		mv	a0,a5
+  39 005c 97000000 		call	factoreal
+  39      E7800000 
+  40 0064 93070500 		mv	a5,a0
+  41 0068 8325C4FE 		lw	a1,-20(s0)
+  42 006c 13850700 		mv	a0,a5
+  43 0070 97000000 		call	__mulsi3
+  43      E7800000 
+  44 0078 93070500 		mv	a5,a0
+  45 007c 6F008000 		j	.L6
+  46              	.L4:
+  47 0080 93071000 		li	a5,1
+  48              	.L6:
+  49 0084 13850700 		mv	a0,a5
+  50 0088 8320C101 		lw	ra,28(sp)
+  51 008c 03248101 		lw	s0,24(sp)
+  52 0090 13010102 		addi	sp,sp,32
+  53 0094 67800000 		jr	ra
+  55              		.align	2
+  56              		.globl	fib
+  58              	fib:
+  59 0098 130101FE 		addi	sp,sp,-32
+  60 009c 232E1100 		sw	ra,28(sp)
+  61 00a0 232C8100 		sw	s0,24(sp)
+  62 00a4 232A9100 		sw	s1,20(sp)
+  63 00a8 13040102 		addi	s0,sp,32
+  64 00ac 2326A4FE 		sw	a0,-20(s0)
+  65 00b0 0327C4FE 		lw	a4,-20(s0)
+  66 00b4 93071000 		li	a5,1
+  67 00b8 63DEE702 		ble	a4,a5,.L8
+  68 00bc 8327C4FE 		lw	a5,-20(s0)
+  69 00c0 9387F7FF 		addi	a5,a5,-1
+  70 00c4 13850700 		mv	a0,a5
+  71 00c8 97000000 		call	fib
+  71      E7800000 
+  72 00d0 93040500 		mv	s1,a0
+  73 00d4 8327C4FE 		lw	a5,-20(s0)
+  74 00d8 9387E7FF 		addi	a5,a5,-2
+  75 00dc 13850700 		mv	a0,a5
+  76 00e0 97000000 		call	fib
+  76      E7800000 
+  77 00e8 93070500 		mv	a5,a0
+  78 00ec B387F400 		add	a5,s1,a5
+  79 00f0 6F008000 		j	.L10
+  80              	.L8:
+  81 00f4 93071000 		li	a5,1
+  82              	.L10:
+  83 00f8 13850700 		mv	a0,a5
+  84 00fc 8320C101 		lw	ra,28(sp)
+  85 0100 03248101 		lw	s0,24(sp)
+  86 0104 83244101 		lw	s1,20(sp)
+  87 0108 13010102 		addi	sp,sp,32
+  88 010c 67800000 		jr	ra
+  90              		.align	2
+  91              		.globl	_start
+  93              	_start:
+  94 0110 130101FF 		addi	sp,sp,-16
+  95 0114 23261100 		sw	ra,12(sp)
+  96 0118 23248100 		sw	s0,8(sp)
+  97 011c 13040101 		addi	s0,sp,16
+  98 0120 97000000 		call	main
+  98      E7800000 
+  99 0128 13000000 		nop
+ 100 012c 8320C100 		lw	ra,12(sp)
+ 101 0130 03248100 		lw	s0,8(sp)
+ 102 0134 13010101 		addi	sp,sp,16
+ 103 0138 67800000 		jr	ra
+ 105              		.ident	"GCC: (GNU) 9.2.0"
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 test.c
-     /tmp/ccETioXS.s:10     .text:0000000000000000 main
-     /tmp/ccETioXS.s:27     .text:0000000000000034 fib
-     /tmp/ccETioXS.s:49     .text:0000000000000090 .L4
-     /tmp/ccETioXS.s:51     .text:0000000000000094 .L6
+     /tmp/ccp8xW08.s:10     .text:0000000000000000 main
+     /tmp/ccp8xW08.s:58     .text:0000000000000098 fib
+     /tmp/ccp8xW08.s:28     .text:0000000000000034 factoreal
+     /tmp/ccp8xW08.s:93     .text:0000000000000110 _start
+     /tmp/ccp8xW08.s:46     .text:0000000000000080 .L4
+     /tmp/ccp8xW08.s:48     .text:0000000000000084 .L6
+     /tmp/ccp8xW08.s:80     .text:00000000000000f4 .L8
+     /tmp/ccp8xW08.s:82     .text:00000000000000f8 .L10
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+__mulsi3

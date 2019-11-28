@@ -61,3 +61,57 @@ char* vmemory::getpage(uint32_t addr)
 	else buf = it->second;
 	return buf;
 }
+
+int8_t vmemory_pt::read8(uint32_t addr)
+{
+	char* buf = getpage(addr);
+	return *(int8_t*)(buf + INPAGE_ADDR(addr));
+}
+
+int16_t vmemory_pt::read16(uint32_t addr)
+{
+	char* buf = getpage(addr);
+	return *(int16_t*)(buf + INPAGE_ADDR(addr));
+}
+
+int32_t vmemory_pt::read32(uint32_t addr)
+{
+	char* buf = getpage(addr);
+	return *(int32_t*)(buf + INPAGE_ADDR(addr));
+}
+
+void vmemory_pt::write8(uint32_t addr, int8_t data)
+{
+	char* buf = getpage(addr);
+	*(int8_t*)(buf + INPAGE_ADDR(addr)) = data;
+}
+
+void vmemory_pt::write16(uint32_t addr, int16_t data)
+{
+	char* buf = getpage(addr);
+	*(int16_t*)(buf + INPAGE_ADDR(addr)) = data;
+}
+
+void vmemory_pt::write32(uint32_t addr, int32_t data)
+{
+	char* buf = getpage(addr);
+	*(int32_t*)(buf + INPAGE_ADDR(addr)) = data;
+}
+
+vmemory_pt::vmemory_pt()
+{
+	//for(int i = 0; i <= PAGENUM_OFFS(0xFFFFFFFF); i ++) pages[i].active = 0;
+}
+
+char* vmemory_pt::getpage(uint32_t addr)
+{
+	//printf("access to pagegenum: %X\n", PAGENUM_OFFS(addr));
+	page* pg = &(pages[PAGENUM_OFFS(addr)]);
+	if(!pg->active) 
+	{
+		//printf("creating new page\n");
+		pg->buf = (char*)malloc(~PAGEMASK + 1);
+		pg->active = 1;
+	}
+	return pg->buf;
+}

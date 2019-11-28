@@ -10,7 +10,7 @@
 int main(int argc, char** argv)
 {
 	simulator sim;
-	sim.proc.memif = new vmemory();
+	sim.proc.memif = new vmemory_pt();
 
 	int i;
 	char* filename = 0;

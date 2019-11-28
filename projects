@@ -28,11 +28,14 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=3
-FILE_NAME_0=16;ASM;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Ftest.asm;0;4
-FILE_NAME_1=70;None;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fbasic_loop_test.txt;0;4
-FILE_NAME_2=78;Python;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Freggen.py;0;4
-FILE_NAME_3=0;Python;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fassembler.py;0;4
+current_page=6
+FILE_NAME_0=3340;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Felf_to_myhex.cpp;0;4
+FILE_NAME_1=76;Make;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2Fparse-elf%2FMakefile;0;4
+FILE_NAME_2=547;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fsimulator.cpp;0;4
+FILE_NAME_3=2425;Python;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fassembler.py;0;4
+FILE_NAME_4=262;Python;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Fdisassembler.py;0;4
+FILE_NAME_5=411;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2FRV_sim.cpp;0;4
+FILE_NAME_6=3367;C++;0;EUTF-8;1;1;0;%2Fhome%2Fleha%2FRV_sim%2Finstr_autogen.h;0;4
 
 [VTE]
 last_dir=/home/leha

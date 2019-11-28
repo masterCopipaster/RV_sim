@@ -45,7 +45,7 @@ int main() {
 
 	/* Print out the solution we found.  No error checking to
 	   complain if the solution is incomplete! */
-	for (row = 0; row < N; row++) {
+	/*for (row = 0; row < N; row++) {
 		for (col = 0; col < N; col++) {
 			if (rows[row] == col)
 				printf("Q");
@@ -53,7 +53,7 @@ int main() {
 				printf("-");
 		}
 		printf("\n");
-	}
+	}*/
 
 	return(1);
 }
@@ -98,8 +98,8 @@ int Legal_Pos(int row, int col, int rows[N])
 	return(1);
 }
 
-//void _start() { main(); }
-
+void _start() { main(); }
+/*
 void _sbrk() { asm("ecall"); }
 void _write() { asm("ecall"); }
 void _close() { asm("ecall"); }
@@ -108,3 +108,5 @@ void _isatty() { asm("ecall"); }
 void _lseek() { asm("ecall"); }
 void _read() { asm("ecall"); }
 void _exit() { asm("ecall"); }
+*/
+

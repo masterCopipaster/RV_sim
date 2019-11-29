@@ -51,7 +51,8 @@ int main(int argc, char** argv)
 		if(wait) if(getchar() == 'q') return 0;
 		if(debug) sim.proc.printout();
 	}
-	printf("TOTAL INSTRUCTIONS: %d\n", sim.step_count);
+	printf("TOTAL INSTRUCTIONS: %d\nICACHE HITS: %d %f\%\nICACHE MISS: %d %f\%\n", 
+		sim.step_count, sim.icache_hit, 100 * (double)sim.icache_hit / (double)sim.step_count, sim.icache_miss, 100 * (double)sim.icache_miss / (double)sim.step_count);
 	sim.proc.printout();
 	return 0;
 }

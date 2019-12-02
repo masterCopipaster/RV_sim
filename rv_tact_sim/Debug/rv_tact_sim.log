@@ -1,0 +1,7 @@
+﻿  RV_sim.cpp
+C:\Users\petrenko.a\Documents\RV_sim\tact\RV_sim.cpp(54,9): warning C4129: %: неизвестная escape-последовательность
+C:\Users\petrenko.a\Documents\RV_sim\tact\RV_sim.cpp(54,9): warning C4476: "printf": неизвестный символ поля типа "\n" в описателе формата
+  vmemory.cpp
+  Создание кода...
+C:\Users\petrenko.a\Documents\RV_sim\tact\RV_sim.cpp(54,9): warning C4778: "printf": незавершенная строка форматирования "%\n"
+  rv_tact_sim.vcxproj -> C:\Users\petrenko.a\Documents\RV_sim\rv_tact_sim\Debug\rv_tact_sim.exe

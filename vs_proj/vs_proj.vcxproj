@@ -19,23 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\decoder.cpp" />
-    <ClCompile Include="..\instruction.cpp" />
-    <ClCompile Include="..\memory.cpp" />
-    <ClCompile Include="..\proc_state.cpp" />
-    <ClCompile Include="..\RV_sim.cpp" />
-    <ClCompile Include="..\simulator.cpp" />
-    <ClCompile Include="..\vmemory.cpp" />
+    <ClCompile Include="..\functional\decoder.cpp" />
+    <ClCompile Include="..\functional\instruction.cpp" />
+    <ClCompile Include="..\functional\memory.cpp" />
+    <ClCompile Include="..\functional\proc_state.cpp" />
+    <ClCompile Include="..\functional\RV_sim.cpp" />
+    <ClCompile Include="..\functional\simulator.cpp" />
+    <ClCompile Include="..\functional\vmemory.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\decoder.h" />
-    <ClInclude Include="..\instruction.h" />
-    <ClInclude Include="..\instr_autogen.h" />
-    <ClInclude Include="..\memory.h" />
-    <ClInclude Include="..\mem_if.h" />
-    <ClInclude Include="..\proc_state.h" />
-    <ClInclude Include="..\simulator.h" />
-    <ClInclude Include="..\vmemory.h" />
+    <ClInclude Include="..\functional\decoder.h" />
+    <ClInclude Include="..\functional\instruction.h" />
+    <ClInclude Include="..\functional\instr_autogen.h" />
+    <ClInclude Include="..\functional\memory.h" />
+    <ClInclude Include="..\functional\mem_if.h" />
+    <ClInclude Include="..\functional\proc_state.h" />
+    <ClInclude Include="..\functional\simulator.h" />
+    <ClInclude Include="..\functional\vmemory.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\functional\RV_sim" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

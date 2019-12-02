@@ -15,52 +15,55 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\decoder.cpp">
+    <ClCompile Include="..\functional\decoder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\instruction.cpp">
+    <ClCompile Include="..\functional\instruction.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\memory.cpp">
+    <ClCompile Include="..\functional\memory.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\proc_state.cpp">
+    <ClCompile Include="..\functional\proc_state.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\RV_sim.cpp">
+    <ClCompile Include="..\functional\RV_sim.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\simulator.cpp">
+    <ClCompile Include="..\functional\simulator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\vmemory.cpp">
+    <ClCompile Include="..\functional\vmemory.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\decoder.h">
+    <ClInclude Include="..\functional\decoder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\instr_autogen.h">
+    <ClInclude Include="..\functional\instr_autogen.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\instruction.h">
+    <ClInclude Include="..\functional\instruction.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\mem_if.h">
+    <ClInclude Include="..\functional\mem_if.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\memory.h">
+    <ClInclude Include="..\functional\memory.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\proc_state.h">
+    <ClInclude Include="..\functional\proc_state.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\simulator.h">
+    <ClInclude Include="..\functional\simulator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\vmemory.h">
+    <ClInclude Include="..\functional\vmemory.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\functional\RV_sim" />
   </ItemGroup>
 </Project>

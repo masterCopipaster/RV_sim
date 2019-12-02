@@ -1,2 +1,2 @@
 ﻿  vmemory.cpp
-  vs_proj.vcxproj -> C:\Users\andro\OneDrive\Documents\RV_sim\vs_proj\Debug\vs_proj.exe
+C:\Users\petrenko.a\Documents\RV_sim\functional\vmemory.h(56,49): fatal error C1060: компилятору не хватает размера кучи

@@ -154,6 +154,7 @@
     <ClCompile Include="..\tact\decoder.cpp" />
     <ClCompile Include="..\tact\instruction.cpp" />
     <ClCompile Include="..\tact\memory.cpp" />
+    <ClCompile Include="..\tact\mem_req_adapter.cpp" />
     <ClCompile Include="..\tact\proc_state.cpp" />
     <ClCompile Include="..\tact\RV_sim.cpp" />
     <ClCompile Include="..\tact\simulator.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="..\tact\instr_autogen.h" />
     <ClInclude Include="..\tact\memory.h" />
     <ClInclude Include="..\tact\mem_if.h" />
+    <ClInclude Include="..\tact\mem_req_adapter.h" />
     <ClInclude Include="..\tact\proc_state.h" />
     <ClInclude Include="..\tact\simulator.h" />
     <ClInclude Include="..\tact\vmemory.h" />

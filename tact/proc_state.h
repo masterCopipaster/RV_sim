@@ -10,6 +10,9 @@ class proc_state
 		mem_if* memif = 0;
 		uint32_t pc = 0;
 		int32_t reg[32] = {};
+
+		bool branch = 0;
+		bool stall = 0;
 		
 		void printout();
 		proc_state(size_t  memsize);

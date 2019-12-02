@@ -8,12 +8,33 @@ instruction_R::instruction_R(uint32_t opcode)
 	rd = enc.rd;
 }
 
+int instruction_R::memory(proc_state& proc) 
+{
+	return 0;
+}
+
+int instruction_R::writeback(proc_state& proc)
+{
+	return 0;
+}
+
+
 instruction_I::instruction_I(uint32_t opcode)
 {
 	enc = *(be_I_type_enc*)&opcode;
 	rs1 = enc.rs1;
 	rd = enc.rd;
 	imm12 = __IIMM12;
+}
+
+int instruction_I::memory(proc_state& proc)
+{
+	return 0;
+}
+
+int instruction_I::writeback(proc_state& proc)
+{
+	return 0;
 }
 
 instruction_S::instruction_S(uint32_t opcode)
@@ -24,11 +45,31 @@ instruction_S::instruction_S(uint32_t opcode)
 	imm12 = __SIMM12;
 }
 
+int instruction_S::memory(proc_state& proc)
+{
+	return 0;
+}
+
+int instruction_S::writeback(proc_state& proc)
+{
+	return 0;
+}
+
 instruction_U::instruction_U(uint32_t opcode)
 {
 	enc = *(be_U_type_enc*)&opcode;
 	rd = enc.rd;
 	imm20 = __UIMM20;
+}
+
+int instruction_U::memory(proc_state& proc)
+{
+	return 0;
+}
+
+int instruction_U::writeback(proc_state& proc)
+{
+	return 0;
 }
 
 instruction_J::instruction_J(uint32_t opcode)
@@ -38,12 +79,32 @@ instruction_J::instruction_J(uint32_t opcode)
 	imm20 = __JIMM20;
 }
 
+int instruction_J::memory(proc_state& proc)
+{
+	return 0;
+}
+
+int instruction_J::writeback(proc_state& proc)
+{
+	return 0;
+}
+
 instruction_B::instruction_B(uint32_t opcode)
 {
 	enc = *(be_B_type_enc*)&opcode;
 	rs1 = enc.rs1;
 	rs2 = enc.rs2;
 	imm12 = __BIMM12;
+}
+
+int instruction_B::memory(proc_state& proc)
+{
+	return 0;
+}
+
+int instruction_B::writeback(proc_state& proc)
+{
+	return 0;
 }
 
 instruction* make_instruction(uint32_t opcode)

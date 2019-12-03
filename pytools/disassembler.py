@@ -8,9 +8,9 @@ Created on Mon Nov 18 13:04:59 2019
 import yaml
 import sys
 
-sys.stdin = open("test.myhex")
+sys.stdin = open("../tests/test.myhex")
 
-sys.stdout = open("test.lst", "w")
+#sys.stdout = open("test.lst", "w")
 
 file = open("risc-v.yaml")
 

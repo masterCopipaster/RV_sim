@@ -1,107 +1,133 @@
-class beq_instr : public instruction_B
+class beq_instr : public tinstruction_B
 {
 	public:
-	beq_instr(uint32_t opcode):instruction_B(opcode){}
-	int execute(proc_state& proc)
+	beq_instr(uint32_t opcode):tinstruction_B(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
-		if(_RS1 == _RS2) _PC += _BIMM12;
+		if (_RS1 == _RS2)
+		{
+			_PC += _BIMM12;
+			_SETBR;
+		}
 		else _PC+=4;
 		return 0;
 	}
 };
-class bne_instr : public instruction_B
+class bne_instr : public tinstruction_B
 {
 	public:
-	bne_instr(uint32_t opcode):instruction_B(opcode){}
-	int execute(proc_state& proc)
+	bne_instr(uint32_t opcode):tinstruction_B(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
-		if(_RS1 != _RS2) _PC += _BIMM12;
+		if (_RS1 != _RS2)
+		{
+			_PC += _BIMM12;
+			_SETBR;
+		}
 		else _PC+=4;
 		return 0;
 	}
 };
-class blt_instr : public instruction_B
+class blt_instr : public tinstruction_B
 {
 	public:
-	blt_instr(uint32_t opcode):instruction_B(opcode){}
-	int execute(proc_state& proc)
+	blt_instr(uint32_t opcode):tinstruction_B(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
-		if(_RS1 < _RS2) _PC += _BIMM12;
+		if (_RS1 < _RS2)
+		{
+			_PC += _BIMM12;
+			_SETBR;
+		}
 		else _PC+=4;
 		return 0;
 	}
 };
-class bge_instr : public instruction_B
+class bge_instr : public tinstruction_B
 {
 	public:
-	bge_instr(uint32_t opcode):instruction_B(opcode){}
-	int execute(proc_state& proc)
+	bge_instr(uint32_t opcode):tinstruction_B(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
-		if(_RS1 >= _RS2) _PC += _BIMM12;
+		if(_RS1 >= _RS2) 
+		{
+			_PC += _BIMM12;
+			_SETBR;
+		}
 		else _PC+=4;
 		return 0;
 	}
 };
-class bltu_instr : public instruction_B
+class bltu_instr : public tinstruction_B
 {
 	public:
-	bltu_instr(uint32_t opcode):instruction_B(opcode){}
-	int execute(proc_state& proc)
+	bltu_instr(uint32_t opcode):tinstruction_B(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
-		if((uint32_t)_RS1 < (uint32_t)_RS2) _PC += _BIMM12;
+		if((uint32_t)_RS1 < (uint32_t)_RS2) 
+		{
+			_PC += _BIMM12;
+			_SETBR;
+		}
 		else _PC+=4;
 		return 0;
 	}
 };
-class bgeu_instr : public instruction_B
+class bgeu_instr : public tinstruction_B
 {
 	public:
-	bgeu_instr(uint32_t opcode):instruction_B(opcode){}
-	int execute(proc_state& proc)
+	bgeu_instr(uint32_t opcode):tinstruction_B(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'bimm']
-		if((uint32_t)_RS1 >= (uint32_t)_RS2) _PC += _BIMM12;
+		if((uint32_t)_RS1 >= (uint32_t)_RS2) 
+		{
+			_PC += _BIMM12;
+			_SETBR;
+		}
 		else _PC+=4;
 		return 0;
 	}
 };
-class jalr_instr : public instruction_I
+class jalr_instr : public tinstruction_I
 {
 	public:
-	jalr_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	jalr_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		uint32_t buf = _PC + 4;
 		_PC = (_RS1 + _IIMM12);
 		_PC &= ~1;
 		_RD = buf;
+		_SETBR;
 		return 0;
 	}
 };
-class jal_instr : public instruction_J
+class jal_instr : public tinstruction_J
 {
 	public:
-	jal_instr(uint32_t opcode):instruction_J(opcode){}
-	int execute(proc_state& proc)
+	jal_instr(uint32_t opcode):tinstruction_J(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'jimm20']
 		//printf("%08X\n", _JIMM20);
 		_RD = _PC + 4;
 		_PC += _JIMM20;
+		_SETBR;
 		return 0;
 	}
 };
-class lui_instr : public instruction_U
+class lui_instr : public tinstruction_U
 {
 	public:
-	lui_instr(uint32_t opcode):instruction_U(opcode){}
-	int execute(proc_state& proc)
+	lui_instr(uint32_t opcode):tinstruction_U(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'imm20']
 	//printf("lui r%d %d\n", enc.rd, _UIMM20);
@@ -110,11 +136,11 @@ class lui_instr : public instruction_U
 		return 0;
 	}
 };
-class auipc_instr : public instruction_U
+class auipc_instr : public tinstruction_U
 {
 	public:
-	auipc_instr(uint32_t opcode):instruction_U(opcode){}
-	int execute(proc_state& proc)
+	auipc_instr(uint32_t opcode):tinstruction_U(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'imm20']
 		_RD = _PC + (_UIMM20 << 12);
@@ -122,11 +148,11 @@ class auipc_instr : public instruction_U
 		return 0;
 	}
 };
-class addi_instr : public instruction_I
+class addi_instr : public tinstruction_I
 {
 	public:
-	addi_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	addi_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = _RS1 + _IIMM12;
@@ -134,11 +160,11 @@ class addi_instr : public instruction_I
 		return 0;
 	}
 };
-class slli_instr : public instruction_R
+class slli_instr : public tinstruction_R
 {
 	public:
-	slli_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	slli_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 << enc.rs2;
 	//['rd', 'rs1', 'shamt']
@@ -146,11 +172,11 @@ class slli_instr : public instruction_R
 		return 0;
 	}
 };
-class slti_instr : public instruction_I
+class slti_instr : public tinstruction_I
 {
 	public:
-	slti_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	slti_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = _RS1 < _IIMM12 ? 1 : 0;
@@ -158,11 +184,11 @@ class slti_instr : public instruction_I
 		return 0;
 	}
 };
-class sltiu_instr : public instruction_I
+class sltiu_instr : public tinstruction_I
 {
 	public:
-	sltiu_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	sltiu_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = (uint32_t)_RS1 < (uint32_t)_IIMM12 ? 1 : 0;
@@ -170,11 +196,11 @@ class sltiu_instr : public instruction_I
 		return 0;
 	}
 };
-class xori_instr : public instruction_I
+class xori_instr : public tinstruction_I
 {
 	public:
-	xori_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	xori_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = _RS1 ^ _IIMM12;
@@ -182,11 +208,11 @@ class xori_instr : public instruction_I
 		return 0;
 	}
 };
-class srli_instr : public instruction_R
+class srli_instr : public tinstruction_R
 {
 	public:
-	srli_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	srli_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'shamt']
 		_RD = _RS1 >> enc.rs2;
@@ -194,11 +220,11 @@ class srli_instr : public instruction_R
 		return 0;
 	}
 };
-class srai_instr : public instruction_R
+class srai_instr : public tinstruction_R
 {
 	public:
-	srai_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	srai_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'shamt']
 		int32_t signbits = (_RS1 > 0 ? 0x00000000 : 0xFFFFFFFF) << (32 - enc.rs2);
@@ -207,11 +233,11 @@ class srai_instr : public instruction_R
 		return 0;
 	}
 };
-class ori_instr : public instruction_I
+class ori_instr : public tinstruction_I
 {
 	public:
-	ori_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	ori_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = _RS1 | _IIMM12;
@@ -219,11 +245,11 @@ class ori_instr : public instruction_I
 		return 0;
 	}
 };
-class andi_instr : public instruction_I
+class andi_instr : public tinstruction_I
 {
 	public:
-	andi_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	andi_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = _RS1 & _IIMM12;
@@ -231,11 +257,11 @@ class andi_instr : public instruction_I
 		return 0;
 	}
 };
-class add_instr : public instruction_R
+class add_instr : public tinstruction_R
 {
 	public:
-	add_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	add_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -243,11 +269,11 @@ class add_instr : public instruction_R
 		return 0;
 	}
 };
-class sub_instr : public instruction_R
+class sub_instr : public tinstruction_R
 {
 	public:
-	sub_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	sub_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 - _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -255,11 +281,11 @@ class sub_instr : public instruction_R
 		return 0;
 	}
 };
-class sll_instr : public instruction_R
+class sll_instr : public tinstruction_R
 {
 	public:
-	sll_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	sll_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 << _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -267,11 +293,11 @@ class sll_instr : public instruction_R
 		return 0;
 	}
 };
-class slt_instr : public instruction_R
+class slt_instr : public tinstruction_R
 {
 	public:
-	slt_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	slt_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 < _RS2 ? 1 : 0;
 	//['rd', 'rs1', 'rs2']
@@ -279,11 +305,11 @@ class slt_instr : public instruction_R
 		return 0;
 	}
 };
-class sltu_instr : public instruction_R
+class sltu_instr : public tinstruction_R
 {
 	public:
-	sltu_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	sltu_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = (uint32_t)_RS1 < (uint32_t)_RS2 ? 1 : 0;
 	//['rd', 'rs1', 'rs2']
@@ -291,11 +317,11 @@ class sltu_instr : public instruction_R
 		return 0;
 	}
 };
-class xor_instr : public instruction_R
+class xor_instr : public tinstruction_R
 {
 	public:
-	xor_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	xor_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 ^ _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -303,11 +329,11 @@ class xor_instr : public instruction_R
 		return 0;
 	}
 };
-class srl_instr : public instruction_R
+class srl_instr : public tinstruction_R
 {
 	public:
-	srl_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	srl_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 >> _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -315,11 +341,11 @@ class srl_instr : public instruction_R
 		return 0;
 	}
 };
-class sra_instr : public instruction_R
+class sra_instr : public tinstruction_R
 {
 	public:
-	sra_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	sra_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'rs2']
 		int32_t signbits = (_RS1 > 0 ? 0x00000000 : 0xFFFFFFFF) << (32 - _RS2);
@@ -328,11 +354,11 @@ class sra_instr : public instruction_R
 		return 0;
 	}
 };
-class or_instr : public instruction_R
+class or_instr : public tinstruction_R
 {
 	public:
-	or_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	or_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 | _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -340,11 +366,11 @@ class or_instr : public instruction_R
 		return 0;
 	}
 };
-class and_instr : public instruction_R
+class and_instr : public tinstruction_R
 {
 	public:
-	and_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	and_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 & _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -352,22 +378,22 @@ class and_instr : public instruction_R
 		return 0;
 	}
 };
-class addiw_instr : public instruction_I
+class addiw_instr : public tinstruction_I
 {
 	public:
-	addiw_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	addiw_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_PC+=4;
 		return 0;
 	}
 };
-class slliw_instr : public instruction_R
+class slliw_instr : public tinstruction_R
 {
 	public:
-	slliw_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	slliw_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'shamtw']
@@ -375,11 +401,11 @@ class slliw_instr : public instruction_R
 		return 0;
 	}
 };
-class srliw_instr : public instruction_R
+class srliw_instr : public tinstruction_R
 {
 	public:
-	srliw_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	srliw_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'shamtw']
@@ -387,11 +413,11 @@ class srliw_instr : public instruction_R
 		return 0;
 	}
 };
-class sraiw_instr : public instruction_R
+class sraiw_instr : public tinstruction_R
 {
 	public:
-	sraiw_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	sraiw_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'shamtw']
@@ -399,11 +425,11 @@ class sraiw_instr : public instruction_R
 		return 0;
 	}
 };
-class addw_instr : public instruction_R
+class addw_instr : public tinstruction_R
 {
 	public:
-	addw_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	addw_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -411,11 +437,11 @@ class addw_instr : public instruction_R
 		return 0;
 	}
 };
-class subw_instr : public instruction_R
+class subw_instr : public tinstruction_R
 {
 	public:
-	subw_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	subw_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -423,11 +449,11 @@ class subw_instr : public instruction_R
 		return 0;
 	}
 };
-class sllw_instr : public instruction_R
+class sllw_instr : public tinstruction_R
 {
 	public:
-	sllw_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	sllw_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -435,11 +461,11 @@ class sllw_instr : public instruction_R
 		return 0;
 	}
 };
-class srlw_instr : public instruction_R
+class srlw_instr : public tinstruction_R
 {
 	public:
-	srlw_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	srlw_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -447,11 +473,11 @@ class srlw_instr : public instruction_R
 		return 0;
 	}
 };
-class sraw_instr : public instruction_R
+class sraw_instr : public tinstruction_R
 {
 	public:
-	sraw_instr(uint32_t opcode):instruction_R(opcode){}
-	int execute(proc_state& proc)
+	sraw_instr(uint32_t opcode):tinstruction_R(opcode){}
+	int execute(tproc_state& proc)
 	{
 		_RD = _RS1 + _RS2;
 	//['rd', 'rs1', 'rs2']
@@ -459,11 +485,11 @@ class sraw_instr : public instruction_R
 		return 0;
 	}
 };
-class lb_instr : public instruction_I
+class lb_instr : public tinstruction_I
 {
 	public:
-	lb_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	lb_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = proc.memif->read8(_RS1 + _IIMM12);
@@ -471,11 +497,11 @@ class lb_instr : public instruction_I
 		return 0;
 	}
 };
-class lh_instr : public instruction_I
+class lh_instr : public tinstruction_I
 {
 	public:
-	lh_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	lh_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = proc.memif->read16(_RS1 + _IIMM12);
@@ -483,11 +509,11 @@ class lh_instr : public instruction_I
 		return 0;
 	}
 };
-class lw_instr : public instruction_I
+class lw_instr : public tinstruction_I
 {
 	public:
-	lw_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	lw_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = proc.memif->read32(_RS1 + _IIMM12);
@@ -495,11 +521,11 @@ class lw_instr : public instruction_I
 		return 0;
 	}
 };
-class ld_instr : public instruction_I
+class ld_instr : public tinstruction_I
 {
 	public:
-	ld_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	ld_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = proc.memif->read32(_RS1 + _IIMM12);
@@ -507,11 +533,11 @@ class ld_instr : public instruction_I
 		return 0;
 	}
 };
-class lbu_instr : public instruction_I
+class lbu_instr : public tinstruction_I
 {
 	public:
-	lbu_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	lbu_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = (uint32_t)proc.memif->read8(_RS1 + _IIMM12);
@@ -519,11 +545,11 @@ class lbu_instr : public instruction_I
 		return 0;
 	}
 };
-class lhu_instr : public instruction_I
+class lhu_instr : public tinstruction_I
 {
 	public:
-	lhu_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	lhu_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = (uint32_t)proc.memif->read16(_RS1 + _IIMM12);
@@ -531,11 +557,11 @@ class lhu_instr : public instruction_I
 		return 0;
 	}
 };
-class lwu_instr : public instruction_I
+class lwu_instr : public tinstruction_I
 {
 	public:
-	lwu_instr(uint32_t opcode):instruction_I(opcode){}
-	int execute(proc_state& proc)
+	lwu_instr(uint32_t opcode):tinstruction_I(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rd', 'rs1', 'imm12']
 		_RD = (uint32_t)proc.memif->read32(_RS1 + _IIMM12);
@@ -543,11 +569,11 @@ class lwu_instr : public instruction_I
 		return 0;
 	}
 };
-class sb_instr : public instruction_S
+class sb_instr : public tinstruction_S
 {
 	public:
-	sb_instr(uint32_t opcode):instruction_S(opcode){}
-	int execute(proc_state& proc)
+	sb_instr(uint32_t opcode):tinstruction_S(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'storeimm']
 		proc.memif->write8(_RS1 + _SIMM12, _RS2);
@@ -555,11 +581,11 @@ class sb_instr : public instruction_S
 		return 0;
 	}
 };
-class sh_instr : public instruction_S
+class sh_instr : public tinstruction_S
 {
 	public:
-	sh_instr(uint32_t opcode):instruction_S(opcode){}
-	int execute(proc_state& proc)
+	sh_instr(uint32_t opcode):tinstruction_S(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'storeimm']
 		proc.memif->write16(_RS1 + _SIMM12, _RS2);
@@ -567,11 +593,11 @@ class sh_instr : public instruction_S
 		return 0;
 	}
 };
-class sw_instr : public instruction_S
+class sw_instr : public tinstruction_S
 {
 	public:
-	sw_instr(uint32_t opcode):instruction_S(opcode){}
-	int execute(proc_state& proc)
+	sw_instr(uint32_t opcode):tinstruction_S(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'storeimm']
 		proc.memif->write32(_RS1 + _SIMM12, _RS2); 
@@ -579,11 +605,11 @@ class sw_instr : public instruction_S
 		return 0;
 	}
 };
-class sd_instr : public instruction_S
+class sd_instr : public tinstruction_S
 {
 	public:
-	sd_instr(uint32_t opcode):instruction_S(opcode){}
-	int execute(proc_state& proc)
+	sd_instr(uint32_t opcode):tinstruction_S(opcode){}
+	int execute(tproc_state& proc)
 	{
 	//['rs1', 'rs2', 'storeimm']
 		proc.memif->write32(_RS1 + _SIMM12, _RS2);

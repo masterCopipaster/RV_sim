@@ -3,17 +3,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "simulator.h"
+#include "tsimulator.h"
 #include "vmemory.h"
 
  
 int main(int argc, char** argv)
 {
-	simulator sim;
+	tsimulator sim;
 	sim.proc.memif = new vmemory();
 
 	int i;
-	char* filename = 0;
+	auto default_filename = "../tests/test.myhex";
+	char* filename = (char*)default_filename;
 	bool wait = 0;
 	bool debug = 0;
 	bool usestdin = 0;

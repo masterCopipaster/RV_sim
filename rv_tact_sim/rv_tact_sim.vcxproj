@@ -152,23 +152,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\tact\decoder.cpp" />
-    <ClCompile Include="..\tact\instruction.cpp" />
+    <ClCompile Include="..\tact\tinstruction.cpp" />
     <ClCompile Include="..\tact\memory.cpp" />
     <ClCompile Include="..\tact\mem_req_adapter.cpp" />
-    <ClCompile Include="..\tact\proc_state.cpp" />
+    <ClCompile Include="..\tact\tproc_state.cpp" />
     <ClCompile Include="..\tact\RV_sim.cpp" />
-    <ClCompile Include="..\tact\simulator.cpp" />
+    <ClCompile Include="..\tact\tsimulator.cpp" />
     <ClCompile Include="..\tact\vmemory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\tact\decoder.h" />
-    <ClInclude Include="..\tact\instruction.h" />
+    <ClInclude Include="..\tact\tinstruction.h" />
     <ClInclude Include="..\tact\instr_autogen.h" />
     <ClInclude Include="..\tact\memory.h" />
     <ClInclude Include="..\tact\mem_if.h" />
     <ClInclude Include="..\tact\mem_req_adapter.h" />
-    <ClInclude Include="..\tact\proc_state.h" />
-    <ClInclude Include="..\tact\simulator.h" />
+    <ClInclude Include="..\tact\tproc_state.h" />
+    <ClInclude Include="..\tact\tsimulator.h" />
     <ClInclude Include="..\tact\vmemory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -27,7 +27,7 @@ int tsimulator::do_step()
 	if (!proc.stall)
 	{
 		execute_ph = decode_ph;
-		if (!(decode_ph = make_instruction(fetch_ph)))
+		if (!(decode_ph = make_instruction(fetch_ph)) && fetch_ph)
 		{
 			decode_fault_counter++;
 #ifdef DEBUG
@@ -40,8 +40,11 @@ int tsimulator::do_step()
 
 	if (proc.branch)
 	{
+		if (decode_ph) delete decode_ph;
 		decode_ph = 0;
+		if (execute_ph) delete execute_ph;
 		execute_ph = 0;
+		fetch_ph = 0;
 		proc.branch = 0;
 	}
 
@@ -49,7 +52,8 @@ int tsimulator::do_step()
 	proc.reg[0] = 0;
 #endif
 	step_count++;
-	if (decode_fault_counter > 1) return 1;
+	if (decode_fault_counter > 1)
+		return 1;
 	return 0;
 	/*tinstruction* inst;
 	if(use_icache)

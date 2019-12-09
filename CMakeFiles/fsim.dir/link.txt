@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3  -rdynamic CMakeFiles/fsim.dir/fsim.cpp.o CMakeFiles/fsim.dir/simulator.cpp.o CMakeFiles/fsim.dir/proc_state.cpp.o CMakeFiles/fsim.dir/instruction.cpp.o CMakeFiles/fsim.dir/vmemory.cpp.o CMakeFiles/fsim.dir/decoder.cpp.o CMakeFiles/fsim.dir/memory.cpp.o  -o fsim 

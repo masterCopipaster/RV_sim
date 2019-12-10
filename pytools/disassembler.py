@@ -8,11 +8,11 @@ Created on Mon Nov 18 13:04:59 2019
 import yaml
 import sys
 
-sys.stdin = open("../tests/test.myhex")
+#sys.stdin = open("../tests/test.myhex")
 
 #sys.stdout = open("test.lst", "w")
 
-file = open("risc-v.yaml")
+file = open("pytools/risc-v.yaml")
 
 data = yaml.safe_load(file)
 fields = data["fields"]
@@ -37,10 +37,12 @@ def sign_extend(value, bits):
     sign_bit = 1 << (bits - 1)
     return (value & (sign_bit - 1)) - (value & sign_bit)
 
-lines = sys.stdin.readlines()
+#lines = sys.stdin.readlines()
 
-for line in lines:
-    components = line.strip().split()
+#for line in lines:
+    #components = line.strip().split()
+while 1:
+    components = input().strip().split()
     if len(components) == 0: continue
     try:
         addr, opcode = int(components[0], 16), int(components[1], 16)

@@ -8,7 +8,11 @@ int tsimulator::do_step()
 	if (SF(writeback_ph, active))
 	{
 		writeback_ph->writeback(proc);
+#ifdef DEBUG
 		printf("WRITEBACK PC: %X\n", writeback_ph->pcbuf);
+		printf("WRITEBACK ");
+		fprintf(stderr, "%X\t%08x\n", writeback_ph->pcbuf, *(uint32_t*)&((tinstruction_R*)writeback_ph)->enc);
+#endif
 		instr_count++;
 	}
 	if(writeback_ph) delete writeback_ph;
@@ -38,6 +42,7 @@ int tsimulator::do_step()
 		else if(decode_ph) decode_ph->pcbuf = fetch_addr;
 		fetch_ph = proc.memif->read32(proc.pc);
 		fetch_addr = proc.pc;
+		//fprintf(stderr, "%X\t%08x\n", fetch_addr, fetch_ph);
 	}
 	else execute_ph = 0;
 
@@ -50,6 +55,8 @@ int tsimulator::do_step()
 		fetch_ph = 0;
 		proc.branch = 0;
 	}
+	else
+	if (!SF(execute_ph, active) && !proc.stall) proc.pc += 4;
 
 #ifdef ZERO_R0
 	proc.reg[0] = 0;

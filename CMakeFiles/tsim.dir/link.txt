@@ -1,1 +1,1 @@
-/usr/bin/c++  -O3  -rdynamic CMakeFiles/tsim.dir/tsim.cpp.o CMakeFiles/tsim.dir/tsimulator.cpp.o CMakeFiles/tsim.dir/tproc_state.cpp.o CMakeFiles/tsim.dir/tinstruction.cpp.o CMakeFiles/tsim.dir/vmemory.cpp.o CMakeFiles/tsim.dir/decoder.cpp.o CMakeFiles/tsim.dir/memory.cpp.o  -o tsim 
+/usr/bin/c++    -rdynamic CMakeFiles/tsim.dir/tsim.cpp.o CMakeFiles/tsim.dir/tsimulator.cpp.o CMakeFiles/tsim.dir/tproc_state.cpp.o CMakeFiles/tsim.dir/tinstruction.cpp.o CMakeFiles/tsim.dir/vmemory.cpp.o CMakeFiles/tsim.dir/decoder.cpp.o CMakeFiles/tsim.dir/memory.cpp.o  -o tsim 

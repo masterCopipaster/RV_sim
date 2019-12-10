@@ -17,6 +17,7 @@ public:
 	cosimulator();
 	void load_myhex(FILE* file);
 	void printout();
+	bool compare();
 };
 
 #endif //_COSIMULATOR_H

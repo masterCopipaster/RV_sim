@@ -1,0 +1,2 @@
+./cosim $1 -d -w 2> >(python3 pytools/disassembler.py) 
+

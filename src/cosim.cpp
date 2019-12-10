@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 		return 1;
 	}
 
-	while (!sim.do_step())
+	while (!sim.do_step() && !sim.compare())
 	{
 		if(wait) if(getchar() == 'q') return 0;
 		if(debug) 

@@ -8,9 +8,9 @@ Created on Tue Nov 12 14:19:54 2019
 import yaml
 import sys
 
-sys.stdin = open("../tests/test.asm")
+sys.stdin = open("tests/test.asm")
 
-file = open("risc-v.yaml")
+file = open("pytools/risc-v.yaml")
 
 data = yaml.safe_load(file)
 fields = data["fields"]

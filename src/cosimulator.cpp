@@ -26,6 +26,14 @@ void cosimulator::printout()
 	printf("===functional===\ninstruction count: %d\nstep count: %d\n", fsim.step_count, fsim.step_count);
 	fsim.proc.printout();
 	printf("======tact======\ninstruction count: %d\nstep count: %d\n", tsim.instr_count, tsim.step_count);
-	tsim.proc.printout();
-	
+	tsim.proc.printout();	
 }
+
+bool cosimulator::compare()
+{
+	for(int i = 0; i < 32; i++)
+		if(fsim.proc.reg[i] != tsim.proc.reg[i])
+			return 1;
+	return 0;
+}
+

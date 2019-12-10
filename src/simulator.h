@@ -25,6 +25,7 @@ public:
 	unsigned long step_count = 0;
 	bool use_icache = 0;
 	int do_step();
+	int do_step_perf();
 	simulator(size_t memsize); 
 	simulator(){};
 	void load_myhex(FILE* file);

@@ -17,6 +17,7 @@ int main(int argc, char** argv)
 	bool wait = 0;
 	bool debug = 0;
 	bool usestdin = 0;
+	bool perf = 0;
 	FILE* file;
 
 	for(i = 1; i < argc; i++)
@@ -25,6 +26,7 @@ int main(int argc, char** argv)
 		else if (!strcmp(argv[i], "-d")) debug = 1;
 		else if (!strcmp(argv[i], "-stdin")) usestdin = 1;
 		else if (!strcmp(argv[i], "-icache")) sim.use_icache = 1;
+		else if (!strcmp(argv[i], "-perf")) perf = 1;
 		else filename = argv[i];
 	}
 	if (!usestdin)
@@ -45,12 +47,15 @@ int main(int argc, char** argv)
 		printf("cannot open file\n");
 		return 1;
 	}
-
-	while (!sim.do_step())
-	{
-		if(wait) if(getchar() == 'q') return 0;
-		if(debug) sim.proc.printout();
-	}
+	
+	if (perf)
+		while(!sim.do_step_perf());
+	else
+		while (!sim.do_step())
+		{
+			if(wait) if(getchar() == 'q') return 0;
+			if(debug) sim.proc.printout();
+		}
 	printf("TOTAL INSTRUCTIONS: %d\nICACHE HITS: %d %f\%\nICACHE MISS: %d %f\%\n", 
 		sim.step_count, sim.icache_hit, 100 * (double)sim.icache_hit / (double)sim.step_count, sim.icache_miss, 100 * (double)sim.icache_miss / (double)sim.step_count);
 	sim.proc.printout();

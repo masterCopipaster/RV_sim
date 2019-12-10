@@ -32,6 +32,21 @@ int simulator::do_step()
 	return 0;
 }
 
+int simulator::do_step_perf()
+{
+	instruction* inst = get_instruction();
+	if(!inst) 
+	{
+		printf("wrong instruction code\n");
+		return 1;
+	}
+	inst->execute(proc);
+	proc.reg[0] = 0;
+	step_count++;
+	return 0;
+}
+
+
 simulator::simulator(size_t memsize)
 {
 	proc = proc_state(memsize);

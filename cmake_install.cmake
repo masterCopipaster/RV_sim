@@ -1,4 +1,4 @@
-# Install script for directory: /home/leha/RV_sim/src
+# Install script for directory: /home/alex/RV_sim/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/leha/RV_sim/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alex/RV_sim/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

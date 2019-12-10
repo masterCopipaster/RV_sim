@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/leha/RV_sim/src/decoder.cpp" "/home/leha/RV_sim/CMakeFiles/tsim.dir/decoder.cpp.o"
-  "/home/leha/RV_sim/src/memory.cpp" "/home/leha/RV_sim/CMakeFiles/tsim.dir/memory.cpp.o"
-  "/home/leha/RV_sim/src/tinstruction.cpp" "/home/leha/RV_sim/CMakeFiles/tsim.dir/tinstruction.cpp.o"
-  "/home/leha/RV_sim/src/tproc_state.cpp" "/home/leha/RV_sim/CMakeFiles/tsim.dir/tproc_state.cpp.o"
-  "/home/leha/RV_sim/src/tsim.cpp" "/home/leha/RV_sim/CMakeFiles/tsim.dir/tsim.cpp.o"
-  "/home/leha/RV_sim/src/tsimulator.cpp" "/home/leha/RV_sim/CMakeFiles/tsim.dir/tsimulator.cpp.o"
-  "/home/leha/RV_sim/src/vmemory.cpp" "/home/leha/RV_sim/CMakeFiles/tsim.dir/vmemory.cpp.o"
+  "/home/alex/RV_sim/src/decoder.cpp" "/home/alex/RV_sim/CMakeFiles/tsim.dir/decoder.cpp.o"
+  "/home/alex/RV_sim/src/memory.cpp" "/home/alex/RV_sim/CMakeFiles/tsim.dir/memory.cpp.o"
+  "/home/alex/RV_sim/src/tinstruction.cpp" "/home/alex/RV_sim/CMakeFiles/tsim.dir/tinstruction.cpp.o"
+  "/home/alex/RV_sim/src/tproc_state.cpp" "/home/alex/RV_sim/CMakeFiles/tsim.dir/tproc_state.cpp.o"
+  "/home/alex/RV_sim/src/tsim.cpp" "/home/alex/RV_sim/CMakeFiles/tsim.dir/tsim.cpp.o"
+  "/home/alex/RV_sim/src/tsimulator.cpp" "/home/alex/RV_sim/CMakeFiles/tsim.dir/tsimulator.cpp.o"
+  "/home/alex/RV_sim/src/vmemory.cpp" "/home/alex/RV_sim/CMakeFiles/tsim.dir/vmemory.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

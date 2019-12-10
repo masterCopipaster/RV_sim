@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leha/RV_sim/src
+CMAKE_SOURCE_DIR = /home/alex/RV_sim/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leha/RV_sim
+CMAKE_BINARY_DIR = /home/alex/RV_sim
 
 #=============================================================================
 # Target rules for target CMakeFiles/cosim.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/leha/RV_sim
 CMakeFiles/cosim.dir/all:
 	$(MAKE) -f CMakeFiles/cosim.dir/build.make CMakeFiles/cosim.dir/depend
 	$(MAKE) -f CMakeFiles/cosim.dir/build.make CMakeFiles/cosim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target cosim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target cosim"
 .PHONY : CMakeFiles/cosim.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/cosim.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cosim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leha/RV_sim/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/RV_sim/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cosim.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leha/RV_sim/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/RV_sim/CMakeFiles 0
 .PHONY : CMakeFiles/cosim.dir/rule
 
 # Convenience name for target.
@@ -103,7 +103,7 @@ clean: CMakeFiles/cosim.dir/clean
 CMakeFiles/fsim.dir/all:
 	$(MAKE) -f CMakeFiles/fsim.dir/build.make CMakeFiles/fsim.dir/depend
 	$(MAKE) -f CMakeFiles/fsim.dir/build.make CMakeFiles/fsim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=13,14,15,16,17,18,19,20 "Built target fsim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=13,14,15,16,17,18,19,20 "Built target fsim"
 .PHONY : CMakeFiles/fsim.dir/all
 
 # Include target in all.
@@ -113,9 +113,9 @@ all: CMakeFiles/fsim.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/fsim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leha/RV_sim/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/RV_sim/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/fsim.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leha/RV_sim/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/RV_sim/CMakeFiles 0
 .PHONY : CMakeFiles/fsim.dir/rule
 
 # Convenience name for target.
@@ -140,7 +140,7 @@ clean: CMakeFiles/fsim.dir/clean
 CMakeFiles/tsim.dir/all:
 	$(MAKE) -f CMakeFiles/tsim.dir/build.make CMakeFiles/tsim.dir/depend
 	$(MAKE) -f CMakeFiles/tsim.dir/build.make CMakeFiles/tsim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=21,22,23,24,25,26,27,28 "Built target tsim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=21,22,23,24,25,26,27,28 "Built target tsim"
 .PHONY : CMakeFiles/tsim.dir/all
 
 # Include target in all.
@@ -150,9 +150,9 @@ all: CMakeFiles/tsim.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tsim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leha/RV_sim/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/RV_sim/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tsim.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leha/RV_sim/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/RV_sim/CMakeFiles 0
 .PHONY : CMakeFiles/tsim.dir/rule
 
 # Convenience name for target.

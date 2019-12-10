@@ -13,7 +13,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define N 8                /* The number of queens to place on the board. */
+#define N 200                /* The number of queens to place on the board. */
 #define TRUE 1
 #define FALSE 0
 

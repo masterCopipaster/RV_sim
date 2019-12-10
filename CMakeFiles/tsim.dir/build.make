@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leha/RV_sim/src
+CMAKE_SOURCE_DIR = /home/alex/RV_sim/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leha/RV_sim
+CMAKE_BINARY_DIR = /home/alex/RV_sim
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tsim.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/tsim.dir/flags.make
 
 CMakeFiles/tsim.dir/tsim.cpp.o: CMakeFiles/tsim.dir/flags.make
 CMakeFiles/tsim.dir/tsim.cpp.o: src/tsim.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tsim.dir/tsim.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/tsim.cpp.o -c /home/leha/RV_sim/src/tsim.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tsim.dir/tsim.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/tsim.cpp.o -c /home/alex/RV_sim/src/tsim.cpp
 
 CMakeFiles/tsim.dir/tsim.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tsim.dir/tsim.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leha/RV_sim/src/tsim.cpp > CMakeFiles/tsim.dir/tsim.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/RV_sim/src/tsim.cpp > CMakeFiles/tsim.dir/tsim.cpp.i
 
 CMakeFiles/tsim.dir/tsim.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tsim.dir/tsim.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leha/RV_sim/src/tsim.cpp -o CMakeFiles/tsim.dir/tsim.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/RV_sim/src/tsim.cpp -o CMakeFiles/tsim.dir/tsim.cpp.s
 
 CMakeFiles/tsim.dir/tsim.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/tsim.dir/tsim.cpp.o.provides.build: CMakeFiles/tsim.dir/tsim.cpp.o
 
 CMakeFiles/tsim.dir/tsimulator.cpp.o: CMakeFiles/tsim.dir/flags.make
 CMakeFiles/tsim.dir/tsimulator.cpp.o: src/tsimulator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tsim.dir/tsimulator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/tsimulator.cpp.o -c /home/leha/RV_sim/src/tsimulator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tsim.dir/tsimulator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/tsimulator.cpp.o -c /home/alex/RV_sim/src/tsimulator.cpp
 
 CMakeFiles/tsim.dir/tsimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tsim.dir/tsimulator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leha/RV_sim/src/tsimulator.cpp > CMakeFiles/tsim.dir/tsimulator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/RV_sim/src/tsimulator.cpp > CMakeFiles/tsim.dir/tsimulator.cpp.i
 
 CMakeFiles/tsim.dir/tsimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tsim.dir/tsimulator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leha/RV_sim/src/tsimulator.cpp -o CMakeFiles/tsim.dir/tsimulator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/RV_sim/src/tsimulator.cpp -o CMakeFiles/tsim.dir/tsimulator.cpp.s
 
 CMakeFiles/tsim.dir/tsimulator.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/tsim.dir/tsimulator.cpp.o.provides.build: CMakeFiles/tsim.dir/tsimula
 
 CMakeFiles/tsim.dir/tproc_state.cpp.o: CMakeFiles/tsim.dir/flags.make
 CMakeFiles/tsim.dir/tproc_state.cpp.o: src/tproc_state.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tsim.dir/tproc_state.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/tproc_state.cpp.o -c /home/leha/RV_sim/src/tproc_state.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tsim.dir/tproc_state.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/tproc_state.cpp.o -c /home/alex/RV_sim/src/tproc_state.cpp
 
 CMakeFiles/tsim.dir/tproc_state.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tsim.dir/tproc_state.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leha/RV_sim/src/tproc_state.cpp > CMakeFiles/tsim.dir/tproc_state.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/RV_sim/src/tproc_state.cpp > CMakeFiles/tsim.dir/tproc_state.cpp.i
 
 CMakeFiles/tsim.dir/tproc_state.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tsim.dir/tproc_state.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leha/RV_sim/src/tproc_state.cpp -o CMakeFiles/tsim.dir/tproc_state.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/RV_sim/src/tproc_state.cpp -o CMakeFiles/tsim.dir/tproc_state.cpp.s
 
 CMakeFiles/tsim.dir/tproc_state.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/tsim.dir/tproc_state.cpp.o.provides.build: CMakeFiles/tsim.dir/tproc_
 
 CMakeFiles/tsim.dir/tinstruction.cpp.o: CMakeFiles/tsim.dir/flags.make
 CMakeFiles/tsim.dir/tinstruction.cpp.o: src/tinstruction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tsim.dir/tinstruction.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/tinstruction.cpp.o -c /home/leha/RV_sim/src/tinstruction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tsim.dir/tinstruction.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/tinstruction.cpp.o -c /home/alex/RV_sim/src/tinstruction.cpp
 
 CMakeFiles/tsim.dir/tinstruction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tsim.dir/tinstruction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leha/RV_sim/src/tinstruction.cpp > CMakeFiles/tsim.dir/tinstruction.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/RV_sim/src/tinstruction.cpp > CMakeFiles/tsim.dir/tinstruction.cpp.i
 
 CMakeFiles/tsim.dir/tinstruction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tsim.dir/tinstruction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leha/RV_sim/src/tinstruction.cpp -o CMakeFiles/tsim.dir/tinstruction.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/RV_sim/src/tinstruction.cpp -o CMakeFiles/tsim.dir/tinstruction.cpp.s
 
 CMakeFiles/tsim.dir/tinstruction.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/tsim.dir/tinstruction.cpp.o.provides.build: CMakeFiles/tsim.dir/tinst
 
 CMakeFiles/tsim.dir/vmemory.cpp.o: CMakeFiles/tsim.dir/flags.make
 CMakeFiles/tsim.dir/vmemory.cpp.o: src/vmemory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tsim.dir/vmemory.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/vmemory.cpp.o -c /home/leha/RV_sim/src/vmemory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tsim.dir/vmemory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/vmemory.cpp.o -c /home/alex/RV_sim/src/vmemory.cpp
 
 CMakeFiles/tsim.dir/vmemory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tsim.dir/vmemory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leha/RV_sim/src/vmemory.cpp > CMakeFiles/tsim.dir/vmemory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/RV_sim/src/vmemory.cpp > CMakeFiles/tsim.dir/vmemory.cpp.i
 
 CMakeFiles/tsim.dir/vmemory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tsim.dir/vmemory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leha/RV_sim/src/vmemory.cpp -o CMakeFiles/tsim.dir/vmemory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/RV_sim/src/vmemory.cpp -o CMakeFiles/tsim.dir/vmemory.cpp.s
 
 CMakeFiles/tsim.dir/vmemory.cpp.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/tsim.dir/vmemory.cpp.o.provides.build: CMakeFiles/tsim.dir/vmemory.cp
 
 CMakeFiles/tsim.dir/decoder.cpp.o: CMakeFiles/tsim.dir/flags.make
 CMakeFiles/tsim.dir/decoder.cpp.o: src/decoder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tsim.dir/decoder.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/decoder.cpp.o -c /home/leha/RV_sim/src/decoder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tsim.dir/decoder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/decoder.cpp.o -c /home/alex/RV_sim/src/decoder.cpp
 
 CMakeFiles/tsim.dir/decoder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tsim.dir/decoder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leha/RV_sim/src/decoder.cpp > CMakeFiles/tsim.dir/decoder.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/RV_sim/src/decoder.cpp > CMakeFiles/tsim.dir/decoder.cpp.i
 
 CMakeFiles/tsim.dir/decoder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tsim.dir/decoder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leha/RV_sim/src/decoder.cpp -o CMakeFiles/tsim.dir/decoder.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/RV_sim/src/decoder.cpp -o CMakeFiles/tsim.dir/decoder.cpp.s
 
 CMakeFiles/tsim.dir/decoder.cpp.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/tsim.dir/decoder.cpp.o.provides.build: CMakeFiles/tsim.dir/decoder.cp
 
 CMakeFiles/tsim.dir/memory.cpp.o: CMakeFiles/tsim.dir/flags.make
 CMakeFiles/tsim.dir/memory.cpp.o: src/memory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/tsim.dir/memory.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/memory.cpp.o -c /home/leha/RV_sim/src/memory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/tsim.dir/memory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tsim.dir/memory.cpp.o -c /home/alex/RV_sim/src/memory.cpp
 
 CMakeFiles/tsim.dir/memory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tsim.dir/memory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leha/RV_sim/src/memory.cpp > CMakeFiles/tsim.dir/memory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/RV_sim/src/memory.cpp > CMakeFiles/tsim.dir/memory.cpp.i
 
 CMakeFiles/tsim.dir/memory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tsim.dir/memory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leha/RV_sim/src/memory.cpp -o CMakeFiles/tsim.dir/memory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/RV_sim/src/memory.cpp -o CMakeFiles/tsim.dir/memory.cpp.s
 
 CMakeFiles/tsim.dir/memory.cpp.o.requires:
 
@@ -247,7 +247,7 @@ tsim: CMakeFiles/tsim.dir/decoder.cpp.o
 tsim: CMakeFiles/tsim.dir/memory.cpp.o
 tsim: CMakeFiles/tsim.dir/build.make
 tsim: CMakeFiles/tsim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leha/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable tsim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex/RV_sim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable tsim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tsim.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -270,6 +270,6 @@ CMakeFiles/tsim.dir/clean:
 .PHONY : CMakeFiles/tsim.dir/clean
 
 CMakeFiles/tsim.dir/depend:
-	cd /home/leha/RV_sim && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leha/RV_sim/src /home/leha/RV_sim/src /home/leha/RV_sim /home/leha/RV_sim /home/leha/RV_sim/CMakeFiles/tsim.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alex/RV_sim && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex/RV_sim/src /home/alex/RV_sim/src /home/alex/RV_sim /home/alex/RV_sim /home/alex/RV_sim/CMakeFiles/tsim.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tsim.dir/depend
 
